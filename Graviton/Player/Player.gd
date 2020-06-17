@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const GRAVITY = 10
+const GRAVITY = 135
 const SPEED = 100
 
 var movement = Vector2.ZERO
@@ -12,6 +12,10 @@ onready var Esprite = $Sprite
 
 func _physics_process(delta):
 	movement.y += gravityOrder * GRAVITY
+	if gravityOrder == 1:
+		movement.y = min(movement.y,GRAVITY)
+	else:
+		movement.y = max(movement.y,-GRAVITY)
 	
 	
 	if Input.is_action_pressed("ui_right"):
@@ -36,7 +40,5 @@ func _physics_process(delta):
 		else:
 			Esprite.flip_v = true
 	
-	if gravityOrder == 1:
-		movement = move_and_slide(movement,UP)
-	else:
-		movement = move_and_slide(movement,DOWN)
+
+	movement = move_and_slide(movement,UP)
