@@ -3,14 +3,16 @@ extends KinematicBody2D
 const GRAVITY = 135
 const SPEED = 100
 
+export (int)var MaxHealth = 3
 var movement = Vector2.ZERO
 var gravityOrder = 1
 var on_floor = false
 var UP = Vector2.UP
-var DOWN = Vector2(0,1)
+var InvertCounter = 0
+onready var Health = MaxHealth
 onready var Esprite = $Sprite
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	movement.y += gravityOrder * GRAVITY
 	if gravityOrder == 1:
 		movement.y = min(movement.y,GRAVITY)
@@ -20,17 +22,13 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_right"):
 		Esprite.flip_h = false
-		Esprite.play("Walking")
 		movement.x  += SPEED
 		movement.x = min(SPEED,movement.x)
 	elif Input.is_action_pressed("ui_left"):
 		Esprite.flip_h = true
-		Esprite.play("Walking")
 		movement.x -= SPEED
 		movement.x = max(movement.x,-SPEED)
-		
 	else:
-		Esprite.play("Idle")
 		movement.x = 0
 		
 	if Input.is_action_just_pressed("ui_focus_next"):
@@ -39,6 +37,5 @@ func _physics_process(delta):
 			Esprite.flip_v = false
 		else:
 			Esprite.flip_v = true
-	
 
 	movement = move_and_slide(movement,UP)
