@@ -13,12 +13,13 @@ onready var Health = MaxHealth
 onready var Esprite = $Sprite
 
 func _physics_process(_delta):
+
 	movement.y += gravityOrder * GRAVITY
+	
 	if gravityOrder == 1:
 		movement.y = min(movement.y,GRAVITY)
 	else:
 		movement.y = max(movement.y,-GRAVITY)
-	
 	
 	if Input.is_action_pressed("ui_right"):
 		Esprite.flip_h = false
@@ -32,10 +33,24 @@ func _physics_process(_delta):
 		movement.x = 0
 		
 	if Input.is_action_just_pressed("ui_focus_next"):
-		gravityOrder *= -1
-		if gravityOrder == 1:
-			Esprite.flip_v = false
-		else:
-			Esprite.flip_v = true
-
+		if InvertCounter < 1:
+			InvertCounter += 1
+			gravityOrder *= -1
+			if gravityOrder == 1:
+				Esprite.flip_v = false
+			else:
+				Esprite.flip_v = true
+		
 	movement = move_and_slide(movement,UP)
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.has_method("collide_with"):
+			collision.collider.collide_with(collision,self)
+
+
+func set_invert_counter(value):
+	InvertCounter = value
+
+func _on_CollisionDetector_body_entered(body):
+	InvertCounter = 0
