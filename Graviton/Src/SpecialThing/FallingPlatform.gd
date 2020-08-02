@@ -17,7 +17,7 @@ func _physics_process(delta):
 	position += velocity * delta
 	
 
-func collide_with(collision : KinematicCollision2D, collider : KinematicBody2D):
+func collide_with(_collision : KinematicCollision2D, _collider : KinematicBody2D):
 	if !is_triggered:
 		is_triggered = true
 		animation_player.play("Shake")
@@ -33,6 +33,6 @@ func _on_Timer_timeout():
 	collision_layer = temp
 	is_triggered = false
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	set_physics_process(true)
 	timer.start(reset_time)

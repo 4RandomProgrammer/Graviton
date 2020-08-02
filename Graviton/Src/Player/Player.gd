@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-const GRAVITY = 135
+const GRAVITY = 40
+const MAXGRAVITY = 240
 const SPEED = 100
 
 export (int)var MaxHealth = 3
@@ -15,11 +16,12 @@ onready var Esprite = $Sprite
 func _physics_process(_delta):
 
 	movement.y += gravityOrder * GRAVITY
+	print(movement.y)
 	
 	if gravityOrder == 1:
-		movement.y = min(movement.y,GRAVITY)
+		movement.y = min(movement.y,MAXGRAVITY)
 	else:
-		movement.y = max(movement.y,-GRAVITY)
+		movement.y = max(movement.y,-MAXGRAVITY)
 	
 	if Input.is_action_pressed("ui_right"):
 		Esprite.flip_h = false
@@ -52,5 +54,8 @@ func _physics_process(_delta):
 func set_invert_counter(value):
 	InvertCounter = value
 
-func _on_CollisionDetector_body_entered(body):
+func _on_CollisionDetector_body_entered(_body):
 	InvertCounter = 0
+
+func add_gravity(value):
+	movement.y = value
