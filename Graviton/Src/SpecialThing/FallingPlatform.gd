@@ -7,7 +7,7 @@ export (float)var reset_time = 1.0
 var velocity = Vector2()
 var is_triggered = false
 
-const GRAVITY = 200
+const GRAVITY = 500
 
 func _ready():
 	set_physics_process(false)

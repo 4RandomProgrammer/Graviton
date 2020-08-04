@@ -16,7 +16,6 @@ onready var Esprite = $Sprite
 func _physics_process(_delta):
 
 	movement.y += gravityOrder * GRAVITY
-	print(movement.y)
 	
 	if gravityOrder == 1:
 		movement.y = min(movement.y,MAXGRAVITY)
@@ -34,7 +33,7 @@ func _physics_process(_delta):
 	else:
 		movement.x = 0
 		
-	if Input.is_action_just_pressed("ui_focus_next"):
+	if Input.is_action_just_pressed("ui_up"):
 		if InvertCounter < 1:
 			InvertCounter += 1
 			gravityOrder *= -1
@@ -57,5 +56,6 @@ func set_invert_counter(value):
 func _on_CollisionDetector_body_entered(_body):
 	InvertCounter = 0
 
-func add_gravity(value):
-	movement.y = value
+func add_gravity(xvalue,yvalue):
+	movement.y = yvalue
+	movement.x = xvalue
