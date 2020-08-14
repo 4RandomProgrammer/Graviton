@@ -1,0 +1,16 @@
+Lv1 - The Basics. Basic
+- O que eu quero testar/ensinar para os jogadores?
+R: Controles Básicos
+
+- O que é básico do meu jogo? Ou o que pode ser considerado básico?
+- O que todo o jogador deve aprender no começo?
+
+- Como fazer o pacing dos leveis?
+
+- Que desafios coloco nos controles básico?
+- Teste inicial só subida e descida.
+- Mudar de gravidade e cair na diagonal.
+- Controle de queda e de subida.
+
+
+- Como fazer com que o level tenha vários jeitos de ser resolvido e ao mesmo tempo ensine o jogador o que é básico?

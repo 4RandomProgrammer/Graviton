@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_test.png-97b33960cdb8357b20cc979e70e3b12b.stex"
+path="res://.import/gravyV2.png-b850a3326d584b18a9ce00e6b2e261a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileSet/tile_test.png"
-dest_files=[ "res://.import/tile_test.png-97b33960cdb8357b20cc979e70e3b12b.stex" ]
+source_file="res://Assets/Player/gravyV2.png"
+dest_files=[ "res://.import/gravyV2.png-b850a3326d584b18a9ce00e6b2e261a6.stex" ]
 
 [params]
 
