@@ -36,11 +36,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if InvertCounter < 1:
 			InvertCounter += 1
-			gravityOrder *= -1
-			if gravityOrder == 1:
-				Esprite.flip_v = false
-			else:
-				Esprite.flip_v = true
+			reverse()
 		
 	movement = move_and_slide(movement,UP)
 	
@@ -49,6 +45,14 @@ func _physics_process(_delta):
 		if collision.collider.has_method("collide_with"):
 			collision.collider.collide_with(collision,self)
 
+func reverse():
+	
+	gravityOrder *= -1
+	
+	if gravityOrder == 1:
+		Esprite.flip_v = false
+	else:
+		Esprite.flip_v = true
 
 func set_invert_counter(value):
 	InvertCounter = value

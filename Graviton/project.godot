@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Graviton"
-run/main_scene="res://Areas/The-Basics.tscn"
+run/main_scene="res://Src/Areas/The-Basics.tscn"
 config/icon="res://icon.png"
 
 [display]
