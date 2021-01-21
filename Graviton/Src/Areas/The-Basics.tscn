@@ -56,14 +56,6 @@ tile_data = PoolIntArray( -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -460, 58 )
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -460, 58 )
-current = true
-smoothing_enabled = true
-
 [node name="Spike" parent="." instance=ExtResource( 5 )]
 position = Vector2( -24, 88 )
 

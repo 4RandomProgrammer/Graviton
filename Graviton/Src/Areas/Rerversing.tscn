@@ -40,15 +40,6 @@ extents = Vector2( 207, 10 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -186, 21 )
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2( -186, 21 )
-current = true
-smoothing_enabled = true
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
