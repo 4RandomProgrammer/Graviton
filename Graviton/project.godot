@@ -19,6 +19,10 @@ config/name="Graviton"
 run/main_scene="res://Src/Areas/The-Basics.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Main="*res://Src/Engine/Main.tscn"
+
 [display]
 
 window/size/width=400

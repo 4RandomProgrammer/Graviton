@@ -1,7 +1,6 @@
 extends Area2D
 
-export var area = "res://Src/Areas/The-Basics.tscn"
+export var area = 1
 
 func _on_DeathZone_body_entered(_body):
-	get_tree().change_scene(area)
-	print("entrou")
+	Main.chooseLevel(area)
