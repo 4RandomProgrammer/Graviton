@@ -2,17 +2,19 @@ extends Node
 
 
 var fase = null
+var olderLevel = null
 
 var levels = {
+	"Level0": preload("res://Src/Engine/LevelChooser.tscn"),
 	"Level1": preload("res://Src/Areas/The-Basics.tscn"),
 	"Level2": preload("res://Src/Areas/Rerversing.tscn"),
 }
 
 func chooseLevel(level):
 	
-	cleanup()
-	
 	match level:
+		0:
+			fase = levels["Level0"].instance()
 		1:
 			fase = levels["Level1"].instance()
 		2:
@@ -21,6 +23,12 @@ func chooseLevel(level):
 	self.add_child(fase)
 
 #método para limpar a fase selecionada
-func cleanup():
-	if fase != null:
-		fase.queue_free()
+func cleanup(level):
+	fase.queue_free()
+	olderLevel = level
+	$Timer.start()
+
+
+
+func _on_Timer_timeout():
+	chooseLevel(olderLevel)
