@@ -1,10 +1,9 @@
 extends KinematicBody2D
 
-signal groundedUptaded(isGrounded)
-
 const GRAVITY = 40
 const MAXGRAVITY = 240
 const SPEED = 100
+const JUMP_HEIGHT = 400
 
 var movement = Vector2.ZERO
 var gravityOrder = 1
@@ -12,6 +11,7 @@ var on_floor = false
 var UP = Vector2.UP
 var InvertCounter = 0
 var isGrounded  = null
+var jumpCounter = 0
 
 export (int)var MaxHealth = 3
 
@@ -38,18 +38,19 @@ func _physics_process(_delta):
 	else:
 		movement.x = 0
 		
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_accept"):
 		if InvertCounter < 1:
 			InvertCounter += 1
+			Esprite.frame = 1
 			reverse()
-		
+	
+	if Input.is_action_just_pressed("ui_up"):
+		if jumpCounter < 1:
+			movement.y = JUMP_HEIGHT * - (gravityOrder)
+			jumpCounter += 1
+	
 	movement = move_and_slide(movement,UP)
 	
-#	var wasGrounded = isGrounded
-#	isGrounded = is_on_floor()
-#
-#	if wasGrounded == null || isGrounded != is_on_floor():
-#		emit_signal("groundedUptaded", isGrounded)
 	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
@@ -70,6 +71,8 @@ func set_invert_counter(value):
 
 func _on_CollisionDetector_body_entered(_body):
 	InvertCounter = 0
+	jumpCounter = 0
+	$Sprite.frame = 0
 
 func add_gravity(xvalue,yvalue):
 	movement.y = yvalue

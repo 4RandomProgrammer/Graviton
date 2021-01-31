@@ -1,23 +1,19 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Player/gravyV2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Player/SirGravy.png" type="Texture" id=1]
 [ext_resource path="res://Src/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Src/Player/Camera2D.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 4 )
+extents = Vector2( 4, 8 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4, 5 )
+extents = Vector2( 4, 9 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 3, 0 )
 collision_layer = 2
 collision_mask = 2147483649
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -30,15 +26,18 @@ script = ExtResource( 3 )
 [node name="ShiftTween" type="Tween" parent="Camera2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
 texture = ExtResource( 1 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -2 )
 shape = SubResource( 1 )
 
 [node name="CollisionDetector" type="Area2D" parent="."]
 collision_layer = 2147483648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
+position = Vector2( 0, -2 )
 shape = SubResource( 2 )
-[connection signal="groundedUptaded" from="." to="Camera2D" method="_on_Player_groundedUptaded"]
 [connection signal="body_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_body_entered"]
