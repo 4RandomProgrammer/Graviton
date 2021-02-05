@@ -2,13 +2,9 @@
 
 [ext_resource path="res://Src/Engine/LevelChooser.gd" type="Script" id=1]
 
-[node name="LevelChooser" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="LevelChooser" type="CanvasLayer"]
+layer = -1
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 400.0

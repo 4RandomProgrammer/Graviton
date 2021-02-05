@@ -8,8 +8,6 @@ var previousChildCount
 export var radius = Vector2.ONE * 256
 export var rotationDuration := 10
 
-func _ready():
-	findPlatforms()
 
 func _physics_process(delta):
 	

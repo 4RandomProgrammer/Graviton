@@ -18,6 +18,9 @@ export (int)var MaxHealth = 3
 onready var Health = MaxHealth
 onready var Esprite = $Sprite
 
+func _ready():
+	Main.startLevel() #animação de fade in
+
 func _physics_process(_delta):
 
 	movement.y += gravityOrder * GRAVITY
