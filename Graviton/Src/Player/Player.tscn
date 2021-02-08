@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Player/SirGravy.png" type="Texture" id=1]
 [ext_resource path="res://Src/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Src/Player/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://Assets/SoundEffects/jump.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/SoundEffects/changeGravity.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/SoundEffects/270329__littlerobotsoundfactory__jingle-lose-00.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )
@@ -38,4 +41,13 @@ collision_layer = 2147483648
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
 position = Vector2( 0, -2 )
 shape = SubResource( 2 )
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="ChangeGravity" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 [connection signal="body_entered" from="CollisionDetector" to="." method="_on_CollisionDetector_body_entered"]

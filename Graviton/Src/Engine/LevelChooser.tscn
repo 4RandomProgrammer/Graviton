@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Src/Engine/LevelChooser.gd" type="Script" id=1]
+[ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=2]
 
 [node name="LevelChooser" type="CanvasLayer"]
 layer = -1
@@ -50,5 +51,8 @@ margin_left = 291.0
 margin_top = 47.0
 margin_right = 379.0
 margin_bottom = 198.0
+
+[node name="MenuSelectionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_Level2_pressed"]

@@ -49,6 +49,7 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("ui_up"):
 		if jumpCounter < 1:
+			$Jump.play()
 			movement.y = JUMP_HEIGHT * - (gravityOrder)
 			jumpCounter += 1
 	
@@ -62,6 +63,8 @@ func _physics_process(_delta):
 
 func reverse():
 	
+	$ChangeGravity.play()
+	
 	gravityOrder *= -1
 	
 	if gravityOrder == 1:
@@ -71,6 +74,10 @@ func reverse():
 
 func set_invert_counter(value):
 	InvertCounter = value
+
+func DeathSound():
+	if !$DeathSound.is_playing():
+		$DeathSound.play()
 
 func _on_CollisionDetector_body_entered(_body):
 	InvertCounter = 0

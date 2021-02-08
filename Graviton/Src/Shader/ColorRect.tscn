@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 shader_param/cutoff = 1.0
-shader_param/smooth_size = 0.15
+shader_param/smooth_size = 0.2
 shader_param/mask = ExtResource( 2 )
 
 [sub_resource type="Animation" id=2]
