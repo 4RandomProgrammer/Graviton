@@ -24,7 +24,7 @@ func chooseLevel(level):
 		1:
 			fase = levels["Level1"].instance()
 		2:
-			pass
+			fase = levels["Level2"].instance()
 
 	self.add_child(fase)
 
