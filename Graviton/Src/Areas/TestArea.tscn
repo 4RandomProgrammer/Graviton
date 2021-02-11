@@ -19,10 +19,10 @@ radius = Vector2( 128, 128 )
 rotationDuration = 10
 
 [node name="Platform" parent="OrbitController" instance=ExtResource( 4 )]
-position = Vector2( -1.34036, -127.993 )
+position = Vector2( -118.512, 48.3633 )
 
 [node name="Platform2" parent="OrbitController" instance=ExtResource( 4 )]
-position = Vector2( 111.515, 62.8357 )
+position = Vector2( 17.372, -126.816 )
 
 [node name="Platform3" parent="OrbitController" instance=ExtResource( 4 )]
-position = Vector2( -110.175, 65.1573 )
+position = Vector2( 101.14, 78.4524 )
