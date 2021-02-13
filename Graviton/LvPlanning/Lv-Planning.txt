@@ -14,3 +14,6 @@ R: Controles Básicos
 
 
 - Como fazer com que o level tenha vários jeitos de ser resolvido e ao mesmo tempo ensine o jogador o que é básico?
+
+LV2 - Reversing
+Mecanica: utilizar o reset de gravidade.
