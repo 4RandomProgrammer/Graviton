@@ -1,9 +1,15 @@
 extends KinematicBody2D
 
-const GRAVITY = 40
-const MAXGRAVITY = 240
+enum {
+	ALIVE,
+	DEAD
+}
+
+const MAXGRAVITY = 245
 const SPEED = 100
-const JUMP_HEIGHT = 400
+const MAX_JUMP_HEIGHT = 36
+const MIN_JUMP_HEIGHT = 20
+const jump_duration = 0.21
 
 var movement = Vector2.ZERO
 var gravityOrder = 1
@@ -12,6 +18,10 @@ var UP = Vector2.UP
 var InvertCounter = 0
 var isGrounded  = null
 var jumpCounter = 0
+var state = ALIVE
+var max_jump_velocity
+var min_jump_velocity
+var gravity
 
 export (int)var MaxHealth = 3
 
@@ -20,16 +30,45 @@ onready var Esprite = $Sprite
 
 func _ready():
 	Main.startLevel() #animação de fade in
+	gravity = 2 * MAX_JUMP_HEIGHT / pow(jump_duration, 2)
+	max_jump_velocity = sqrt(2 * gravity * MAX_JUMP_HEIGHT)
+	min_jump_velocity = sqrt(2 * gravity * MIN_JUMP_HEIGHT)
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	match state:
+		ALIVE:
+			movement.y += gravityOrder * gravity * delta
+			
+			jumpControl()
+			controls()
+			
+			if gravityOrder == 1:
+				movement.y = min(movement.y,MAXGRAVITY)
+			else:
+				movement.y = max(movement.y,-MAXGRAVITY)
+			
+			movement = move_and_slide(movement,UP)
+		DEAD:
+			pass
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.has_method("collide_with"):
+			collision.collider.collide_with(collision,self)
 
-	movement.y += gravityOrder * GRAVITY
-	
-	if gravityOrder == 1:
-		movement.y = min(movement.y,MAXGRAVITY)
-	else:
-		movement.y = max(movement.y,-MAXGRAVITY)
-	
+func jumpControl():
+		#Pulo/movimento vertical
+		if Input.is_action_just_pressed("ui_up"):
+			if jumpCounter < 1:
+				$Jump.play()
+				movement.y = max_jump_velocity * - (gravityOrder)
+				jumpCounter += 1
+				
+		if Input.is_action_just_released("ui_up") and movement.y < min_jump_velocity * gravityOrder :
+			movement.y = min_jump_velocity
+
+func controls():
+	#Movimento horizontal
 	if Input.is_action_pressed("ui_right"):
 		Esprite.flip_h = false
 		movement.x  += SPEED
@@ -40,26 +79,12 @@ func _physics_process(_delta):
 		movement.x = max(movement.x,-SPEED)
 	else:
 		movement.x = 0
-		
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		if InvertCounter < 1:
 			InvertCounter += 1
 			Esprite.frame = 1
 			reverse()
-	
-	if Input.is_action_just_pressed("ui_up"):
-		if jumpCounter < 1:
-			$Jump.play()
-			movement.y = JUMP_HEIGHT * - (gravityOrder)
-			jumpCounter += 1
-	
-	movement = move_and_slide(movement,UP)
-	
-	
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider.has_method("collide_with"):
-			collision.collider.collide_with(collision,self)
 
 func reverse():
 	
@@ -73,6 +98,7 @@ func reverse():
 		Esprite.flip_v = true
 
 func DeathSound():
+	state = DEAD
 	if !$DeathSound.is_playing():
 		$DeathSound.play()
 

@@ -5,7 +5,7 @@
 [ext_resource path="res://Src/Player/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Assets/SoundEffects/jump.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/SoundEffects/changeGravity.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/SoundEffects/270329__littlerobotsoundfactory__jingle-lose-00.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/SoundEffects/MORTE.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )
