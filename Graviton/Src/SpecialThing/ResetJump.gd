@@ -5,6 +5,7 @@ func _on_ResetJump_body_entered(body):
 		body._on_CollisionDetector_body_entered(body)
 		$Sprite.visible = false
 		$CollisionShape2D.set_deferred("disabled",true)
+		$AudioStreamPlayer.play()
 		$Timer.start(-1)
 
 

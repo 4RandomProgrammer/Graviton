@@ -64,8 +64,8 @@ func jumpControl():
 				movement.y = max_jump_velocity * - (gravityOrder)
 				jumpCounter += 1
 				
-		if Input.is_action_just_released("ui_up") and movement.y < min_jump_velocity * gravityOrder :
-			movement.y = min_jump_velocity
+		if Input.is_action_just_released("ui_up") and movement.y < min_jump_velocity * gravityOrder and jumpCounter :
+			movement.y = min_jump_velocity * gravityOrder
 
 func controls():
 	#Movimento horizontal
@@ -99,6 +99,7 @@ func reverse():
 
 func DeathSound():
 	state = DEAD
+	$Sprite.frame = 2
 	if !$DeathSound.is_playing():
 		$DeathSound.play()
 
