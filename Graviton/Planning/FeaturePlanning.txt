@@ -1,0 +1,9 @@
+1 - Implementar o ventilador;
+2 - Terminar fase 2;
+3 - sprites:
+	- Plataforma que cai;
+	- plataforma que se move;
+	- Portal;
+	- trampolim;
+	- ventilador;
+	- 
