@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/portal_gravity2.wav-a1463460ccd6cb465f9a07fac8fcfdc3.sample"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/portal_gravity2.wav"
+dest_files=[ "res://.import/portal_gravity2.wav-a1463460ccd6cb465f9a07fac8fcfdc3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

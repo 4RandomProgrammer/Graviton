@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/reset_gravity2.wav-c49d075358b39afa2c7e51f4985f319d.sample"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/reset_gravity2.wav"
+dest_files=[ "res://.import/reset_gravity2.wav-c49d075358b39afa2c7e51f4985f319d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
