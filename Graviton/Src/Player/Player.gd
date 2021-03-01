@@ -112,5 +112,6 @@ func _on_CollisionDetector_body_entered(body):
 		jumpCounter = 0
 
 func add_gravity(xvalue,yvalue):
-	movement.y = yvalue
-	movement.x = xvalue
+	movement.y += yvalue
+	movement.x += xvalue
+	print(movement.y)

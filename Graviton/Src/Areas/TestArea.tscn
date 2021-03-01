@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/SpecialThing/MovingPlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/SpecialThing/InputPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/SpecialThing/Ventilador.tscn" type="PackedScene" id=4]
 
 [node name="TestArea" type="Node2D"]
 
@@ -14,3 +15,6 @@ moveTo = Vector2( 0, 192 )
 
 [node name="InputPlatform" parent="." instance=ExtResource( 3 )]
 position = Vector2( 76, 9 )
+
+[node name="Ventilador" parent="." instance=ExtResource( 4 )]
+position = Vector2( 117, 3 )
