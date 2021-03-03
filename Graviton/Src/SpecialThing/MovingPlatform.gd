@@ -6,12 +6,17 @@ var follow = Vector2.ZERO
 
 export var moveTo = Vector2.RIGHT * 192 #192 é a distancia que a plataforma percorre na direção do vetor de duas direções
 export var speed = 3.0
+export var isMoving = false
 
 onready var platform = $Platform
 onready var moveTween = $MoveTween
 
 func _ready():
-	initTween()
+	if isMoving:
+		initTween()
+		set_physics_process(true)
+	else:
+		set_physics_process(false)
 
 func  _physics_process(_delta):
 	platform.position = platform.position.linear_interpolate(follow, 0.075)

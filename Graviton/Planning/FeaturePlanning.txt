@@ -1,9 +1,36 @@
-1 - Implementar o ventilador;
-2 - Terminar fase 2;
-3 - sprites:
+1 - Implementar o ventilador; (implementado)
+2 - Checkpoint; (implementado)
+3 - Implementar moving spikes; (implementado)
+4 - Terminar fase 2;
+5 - sprites:
 	- Plataforma que cai;
 	- plataforma que se move;
 	- Portal;
+	- rotating platform;
 	- trampolim;
 	- ventilador;
-	- 
+	- Tile-set Lv - 3,4,5,6 e 7(?).
+	- Botões de menu:
+		-Pause e resume;(implementado)
+		-Play;(implementado);
+		- Créditos;
+		-Quit;
+		-Lv 1;
+		-Lv 2;
+		-Lv 3;
+		-Lv 4;
+		-Lv 5;
+		-Lv 6;
+		-Lv 7;
+	- Tela titulo;
+	- Seleção de fase;
+	- Level ender;
+	- CheckPoint;
+5 - Lv3;
+6 - Lv4;
+7 - Lv5;
+8 - Lv6;
+9 - Lv7;
+
+Ideias:
+Fazer animação de seleção level nele entrando e saindo da porta;

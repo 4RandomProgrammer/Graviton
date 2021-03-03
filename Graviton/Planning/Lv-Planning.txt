@@ -19,6 +19,8 @@ R: Controles Básicos
 
 LV2 - Reversing
 Mecanica: utilizar o reset de gravidade.
+	Zig zag;
+	re
 
 LV3 - Desapearing
 Mecanica: usar plataforma que cai/destroi e plataforma que some quando o personagem troca a gravidade.

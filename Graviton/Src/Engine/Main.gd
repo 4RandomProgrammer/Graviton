@@ -8,11 +8,18 @@ var levels = {
 
 var fase = null
 var olderLevel = null
+var checkPoint = Vector2.ZERO
 
 onready var anim = $CanvasLayer/Shader/AnimationPlayer
 
 func setFase(faseAtual):
 	fase = faseAtual
+
+func set_CheckPoint(pos):
+	checkPoint = pos
+
+func get_CheckPoint():
+	return checkPoint
 
 func chooseLevel(level):
 	
@@ -20,6 +27,7 @@ func chooseLevel(level):
 	
 	match level:
 		0:
+			checkPoint = Vector2.ZERO
 			fase = levels["Level0"].instance()
 		1:
 			fase = levels["Level1"].instance()
