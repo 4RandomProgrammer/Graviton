@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Ventilador.gd" type="Script" id=1]
+[ext_resource path="res://Src/SpecialThing/Ventilador.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 171 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [node name="Ventilador" type="Area2D"]
 collision_layer = 2147483648
@@ -22,5 +30,9 @@ margin_bottom = 216.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 16, 85 )
+process_material = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Ventilador_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Ventilador_body_exited"]

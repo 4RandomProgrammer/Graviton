@@ -70,6 +70,9 @@ position = Vector2( 458, 384 )
 [node name="ResetJump6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 851, 288 )
 
+[node name="ResetJump9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 569, 190 )
+
 [node name="Spike" parent="." instance=ExtResource( 4 )]
 position = Vector2( -296, 120 )
 
