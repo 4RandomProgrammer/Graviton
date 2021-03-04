@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/SpecialThing/FallingPlatform.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Platforms/falling-platform.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Platforms/falling-platform-V2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 4 )
+extents = Vector2( 32, 8 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Shake"

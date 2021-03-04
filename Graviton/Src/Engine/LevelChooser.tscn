@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/Engine/LevelChooser.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Menus/select a level.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SoundEffects/hover-menu.wav" type="AudioStream" id=4]
 
 [node name="LevelChooser" type="CanvasLayer"]
 layer = -1
@@ -11,14 +13,9 @@ script = ExtResource( 1 )
 margin_right = 400.0
 margin_bottom = 224.0
 color = Color( 0.0196078, 0, 0, 1 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 148.0
-margin_top = 4.0
-margin_right = 284.0
-margin_bottom = 18.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Select a level to play:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 32.0
@@ -51,8 +48,20 @@ margin_left = 291.0
 margin_top = 47.0
 margin_right = 379.0
 margin_bottom = 198.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuSelectionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+
+[node name="MenuHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="select a level" type="Sprite" parent="."]
+position = Vector2( 202, 15 )
+texture = ExtResource( 3 )
+[connection signal="mouse_entered" from="VBoxContainer/Level1" to="." method="_on_Level1_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Level2" to="." method="_on_Level2_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_Level2_pressed"]

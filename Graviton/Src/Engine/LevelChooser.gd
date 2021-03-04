@@ -12,3 +12,9 @@ func _on_Level1_pressed():
 func _on_Level2_pressed():
 	soundEffects.play()
 	Main.cleanup(2)
+
+func _on_Level2_mouse_entered():
+	$MenuHover.play()
+
+func _on_Level1_mouse_entered():
+	$MenuHover.play()

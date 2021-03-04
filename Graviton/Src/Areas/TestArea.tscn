@@ -31,11 +31,11 @@ position = Vector2( 44, 4 )
 position = Vector2( -41, 7 )
 
 [node name="OrbitController" parent="." instance=ExtResource( 9 )]
-position = Vector2( 255, 59 )
+position = Vector2( 29, 42 )
 rotationDuration = 10
 
 [node name="Platform" parent="OrbitController" instance=ExtResource( 6 )]
-position = Vector2( 218.971, 132.618 )
+position = Vector2( 232.764, 106.568 )
 
 [node name="reverse" parent="." instance=ExtResource( 8 )]
 position = Vector2( 71, -28 )
