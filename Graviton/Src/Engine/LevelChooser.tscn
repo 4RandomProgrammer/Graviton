@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Src/Engine/LevelChooser.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Menus/select a level.png" type="Texture" id=3]
 [ext_resource path="res://Assets/SoundEffects/hover-menu.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Menus/level1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Menus/level2.png" type="Texture" id=6]
 
 [node name="LevelChooser" type="CanvasLayer"]
 layer = -1
@@ -26,16 +28,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level1" type="Button" parent="VBoxContainer"]
-margin_right = 58.0
-margin_bottom = 20.0
-text = "Level 1"
+[node name="Level1" type="TextureButton" parent="VBoxContainer"]
+margin_right = 65.0
+margin_bottom = 26.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 5 )
 
-[node name="Level2" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 58.0
-margin_bottom = 44.0
-text = "Level 2"
+[node name="Level2" type="TextureButton" parent="VBoxContainer"]
+margin_top = 30.0
+margin_right = 65.0
+margin_bottom = 56.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 margin_left = 148.0

@@ -6,7 +6,7 @@ enum {
 }
 
 const MAXGRAVITY = 245
-const SPEED = 115
+const SPEED = 125
 const MAX_JUMP_HEIGHT = 36
 const MIN_JUMP_HEIGHT = 20
 const jump_duration = 0.21

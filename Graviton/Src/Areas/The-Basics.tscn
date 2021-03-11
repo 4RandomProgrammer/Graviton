@@ -394,7 +394,7 @@ position = Vector2( 264, -232 )
 rotation = 3.14159
 
 [node name="LevelEnder" parent="." instance=ExtResource( 2 )]
-position = Vector2( -96, 417 )
+position = Vector2( -94, 437 )
 
 [node name="CheckPoint" parent="." instance=ExtResource( 7 )]
 position = Vector2( 403, -72 )

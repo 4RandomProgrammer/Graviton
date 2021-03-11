@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Src/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/play-btn.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Menus/gRAVITON.png" type="Texture" id=3]
 [ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/SoundEffects/hover-menu.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Menus/creditos-btn.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menus/quit-btn.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Menus/Creditos.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Menus/voltar-btn.png" type="Texture" id=9]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -29,12 +33,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit" type="Button" parent="."]
-margin_left = 183.0
-margin_top = 139.0
-margin_right = 223.0
-margin_bottom = 159.0
-text = "Quit"
+[node name="Creditos" type="TextureButton" parent="."]
+margin_left = 175.0
+margin_top = 137.0
+margin_right = 240.0
+margin_bottom = 157.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+
+[node name="Quit" type="TextureButton" parent="."]
+margin_left = 180.0
+margin_top = 160.0
+margin_right = 228.0
+margin_bottom = 180.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,7 +61,63 @@ stream = ExtResource( 5 )
 
 [node name="Selected" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Creditos2" type="ColorRect" parent="."]
+visible = false
+margin_right = 400.0
+margin_bottom = 223.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creditos" type="Sprite" parent="Creditos2"]
+position = Vector2( 192, 24 )
+texture = ExtResource( 8 )
+
+[node name="Voltar" type="TextureButton" parent="Creditos2"]
+margin_left = 352.0
+margin_top = 203.0
+margin_right = 401.0
+margin_bottom = 223.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Creditos2"]
+margin_left = 114.0
+margin_top = 62.0
+margin_right = 273.0
+margin_bottom = 76.0
+text = "Sound Design e Músicas:"
+
+[node name="Label2" type="Label" parent="Creditos2"]
+margin_left = 116.0
+margin_top = 81.0
+margin_right = 275.0
+margin_bottom = 95.0
+text = "Douglas Chen Ishimoto"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Creditos2"]
+margin_left = 84.0
+margin_top = 123.0
+margin_right = 308.0
+margin_bottom = 137.0
+text = "Programação, artes e Level Design:"
+
+[node name="Label4" type="Label" parent="Creditos2"]
+margin_left = 116.0
+margin_top = 144.0
+margin_right = 340.0
+margin_bottom = 158.0
+text = "Luís Felipe Henriques"
 [connection signal="mouse_entered" from="Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="Creditos" to="." method="_on_Creditos_mouse_entered"]
+[connection signal="pressed" from="Creditos" to="." method="_on_Creditos_pressed"]
 [connection signal="mouse_entered" from="Quit" to="." method="_on_Quit_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="mouse_entered" from="Creditos2/Voltar" to="." method="_on_Voltar_mouse_entered"]
+[connection signal="pressed" from="Creditos2/Voltar" to="." method="_on_Voltar_pressed"]

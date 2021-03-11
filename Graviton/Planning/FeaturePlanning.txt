@@ -14,18 +14,26 @@
 	- Botões de menu:
 		-Pause e resume;(implementado)
 		-Play;(implementado);
-		- Créditos;
-		-Quit;
-		-Lv 1;
-		-Lv 2;
-		-Lv 3;
+		- Voltar; (Implementado)
+		- Créditos;(Implementado)
+		-Quit;(Implementado)
+		-Lv 1;(Implementado)
+		-Lv 2; (Implementado)
+		-Lv 3;(Implementado)
 		-Lv 4;
 		-Lv 5;
 		-Lv 6;
 		-Lv 7;
 	- Tela titulo;
+		- Sprite de fundo(?);
+		- Titulo;(implementado);
 	- Seleção de fase;
-	- Level ender;
+		- Sprite de fundo(?);
+		- Título; (implementado);
+	- Creditos;
+		- Titulo; (Implementado)
+		- creditos;
+	- Level ender;(implementado)
 	- CheckPoint; (implementado)
 5 - Lv3;
 6 - Lv4;
