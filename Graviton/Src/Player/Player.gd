@@ -104,12 +104,20 @@ func DeathSound():
 		$DeathSound.play()
 
 func _on_CollisionDetector_body_entered(body):
+	if body is TileMap:
+		_check_tilemap(body)
+	
 	InvertCounter = 0
 	$Sprite.frame = 0
 	
 	#não soube uma forma melhor que isso
 	if(body != self):
 		jumpCounter = 0
+
+func _check_tilemap(body : TileMap):
+	if body.has_method("_on_DeathZone_body_entered"):
+		body._on_DeathZone_body_entered(self)
+
 
 func add_gravity(xvalue,yvalue):
 	movement.y += yvalue
