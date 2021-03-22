@@ -40,6 +40,7 @@
 7 - Lv5;
 8 - Lv6;
 9 - Lv7;
+10 - sistema de música (implementado);
 
 Ideias:
 Fazer animação de seleção level nele entrando e saindo da porta;
