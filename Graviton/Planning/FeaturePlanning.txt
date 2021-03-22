@@ -1,7 +1,7 @@
 1 - Implementar o ventilador; (implementado)
 2 - Checkpoint; (implementado)
 3 - Implementar moving spikes; (implementado)
-4 - Terminar fase 2;
+4 - Terminar fase 2;(implementado)
 5 - sprites:
 	- Plataforma que cai; (Implementado)
 	- plataforma que se move;(implementado)
@@ -9,7 +9,7 @@
 	- Portal; (implementado)
 	- rotating platform; (implementado)
 	- trampolim; (implementado)
-	- ventilador;
+	- ventilador;(implementado)
 	- Tile-set Lv - 3,4,5,6 e 7(?).(implementado)
 	- Botões de menu:
 		-Pause e resume;(implementado)
@@ -43,3 +43,4 @@
 
 Ideias:
 Fazer animação de seleção level nele entrando e saindo da porta;
+SpeedrunMode

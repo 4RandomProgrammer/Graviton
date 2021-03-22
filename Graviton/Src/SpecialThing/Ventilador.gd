@@ -5,6 +5,7 @@ export var yValue = -29
 
 func _ready():
 	set_physics_process(false)
+	$AudioStreamPlayer2D.play()
 
 func _physics_process(_delta):
 	player.add_gravity(0, yValue)

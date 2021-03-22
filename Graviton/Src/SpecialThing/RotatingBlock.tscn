@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Platforms/rotating-block-v2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Platforms/rotating-block-v3.png" type="Texture" id=1]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Rotation"
@@ -21,7 +21,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 7 )
+extents = Vector2( 16, 8 )
 
 [node name="RotatingBlock" type="StaticBody2D"]
 

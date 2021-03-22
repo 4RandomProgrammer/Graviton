@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Src/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/play-btn.png" type="Texture" id=2]
@@ -9,24 +9,269 @@
 [ext_resource path="res://Assets/Menus/quit-btn.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Menus/Creditos.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Menus/voltar-btn.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Menus/creditosNome.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/Menus/Menu.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Assets/TileSet/block-nolevel2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/TileSet/TestTile.png" type="Texture" id=13]
+[ext_resource path="res://Assets/TileSet/block-nolevel3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/TileSet/block-nolevel4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/TileSet/block-lv-.png" type="Texture" id=16]
+[ext_resource path="res://Assets/TileSet/block-nolevel.png" type="Texture" id=17]
+[ext_resource path="res://Assets/TileSet/tile-2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/TileSet/tile_test.png" type="Texture" id=19]
+[ext_resource path="res://Assets/TileSet/block-nolevel2v2.png" type="Texture" id=20]
+[ext_resource path="res://Assets/TileSet/block-lv-v2-.png" type="Texture" id=21]
+[ext_resource path="res://Src/Player/Player.tscn" type="PackedScene" id=22]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=9]
+0/name = "TestTile.png 0"
+0/texture = ExtResource( 13 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "block-nolevel3.png 1"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "block-lv-.png 2"
+2/texture = ExtResource( 16 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 3 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "block-nolevel2.png 3"
+3/texture = ExtResource( 12 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 4 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "block-nolevel4.png 4"
+4/texture = ExtResource( 15 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 5 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "block-nolevel.png 5"
+5/texture = ExtResource( 17 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 6 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "tile_test.png 6"
+6/texture = ExtResource( 19 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 7 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "tile-2.png 7"
+7/texture = ExtResource( 18 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 8 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "block-lv-v2-.png 8"
+8/texture = ExtResource( 21 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "block-nolevel2v2.png 9"
+9/texture = ExtResource( 20 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 16, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 68, 13 )
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_top = -1.0
-margin_right = 400.0
-margin_bottom = 223.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Player" parent="." instance=ExtResource( 22 )]
+position = Vector2( 235, 14 )
+
+[node name="Camera2D" parent="Player" index="1"]
+current = false
+
+[node name="Pause Menu" parent="Player/Camera2D/CanvasLayer" index="0"]
+visible = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 9 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -1, 6, 0, -65536, 6, 0, -65535, 6, 0, -65534, 6, 0, -65533, 6, 0, -65532, 6, 0, -65531, 6, 0, -65530, 6, 0, -65529, 6, 0, -65528, 6, 0, -65527, 6, 0, -65526, 6, 0, -65525, 6, 0, -65524, 6, 0, -65523, 6, 0, -65522, 6, 0, -65521, 6, 0, -65520, 6, 0, -65519, 6, 0, -65518, 6, 0, -65517, 6, 0, -65516, 6, 0, -65515, 6, 0, -65514, 6, 0, -65513, 6, 0, -65512, 6, 0, -65511, 6, 0, 65535, 6, 0, 0, 6, 0, 1, 7, 0, 2, 1, 0, 3, 4, 0, 4, 9, 0, 5, 8, 0, 6, 5, 0, 18, 6, 0, 19, 7, 0, 20, 1, 0, 21, 4, 0, 22, 9, 0, 23, 8, 0, 24, 5, 0, 25, 6, 0, 131071, 6, 0, 65536, 7, 0, 65537, 1, 0, 65538, 4, 0, 65539, 9, 0, 65540, 8, 0, 65541, 5, 0, 65555, 6, 0, 65556, 7, 0, 65557, 1, 0, 65558, 4, 0, 65559, 9, 0, 65560, 8, 0, 65561, 6, 0, 196607, 6, 0, 131072, 1, 0, 131073, 4, 0, 131074, 9, 0, 131075, 8, 0, 131076, 5, 0, 131092, 6, 0, 131093, 7, 0, 131094, 1, 0, 131095, 4, 0, 131096, 9, 0, 131097, 6, 0, 262143, 6, 0, 196608, 4, 0, 196609, 9, 0, 196610, 8, 0, 196611, 5, 0, 196629, 6, 0, 196630, 7, 0, 196631, 1, 0, 196632, 4, 0, 196633, 6, 0, 327679, 6, 0, 262144, 9, 0, 262145, 8, 0, 262146, 5, 0, 262166, 6, 0, 262167, 7, 0, 262168, 1, 0, 262169, 6, 0, 393215, 6, 0, 327680, 8, 0, 327681, 5, 0, 327703, 6, 0, 327704, 7, 0, 327705, 6, 0, 458751, 6, 0, 393216, 5, 0, 393240, 6, 0, 393241, 6, 0, 524287, 6, 0, 458752, 6, 0, 458776, 5, 0, 458777, 6, 0, 589823, 6, 0, 524288, 7, 0, 524289, 6, 0, 524311, 5, 0, 524312, 8, 0, 524313, 6, 0, 655359, 6, 0, 589824, 1, 0, 589825, 7, 0, 589826, 6, 0, 589846, 5, 0, 589847, 8, 0, 589848, 9, 0, 589849, 6, 0, 720895, 6, 0, 655360, 4, 0, 655361, 1, 0, 655362, 7, 0, 655363, 6, 0, 655381, 5, 0, 655382, 8, 0, 655383, 9, 0, 655384, 4, 0, 655385, 6, 0, 786431, 6, 0, 720896, 9, 0, 720897, 4, 0, 720898, 1, 0, 720899, 7, 0, 720900, 6, 0, 720916, 5, 0, 720917, 8, 0, 720918, 9, 0, 720919, 4, 0, 720920, 1, 0, 720921, 6, 0, 851967, 6, 0, 786432, 8, 0, 786433, 9, 0, 786434, 4, 0, 786435, 1, 0, 786436, 7, 0, 786437, 6, 0, 786451, 5, 0, 786452, 8, 0, 786453, 9, 0, 786454, 4, 0, 786455, 1, 0, 786456, 7, 0, 786457, 6, 0, 917503, 6, 0, 851968, 5, 0, 851969, 8, 0, 851970, 9, 0, 851971, 4, 0, 851972, 1, 0, 851973, 7, 0, 851974, 6, 0, 851986, 5, 0, 851987, 8, 0, 851988, 9, 0, 851989, 4, 0, 851990, 1, 0, 851991, 7, 0, 851992, 6, 0, 851993, 6, 0, 983039, 6, 0, 917504, 6, 0, 917505, 6, 0, 917506, 6, 0, 917507, 6, 0, 917508, 6, 0, 917509, 6, 0, 917510, 6, 0, 917511, 6, 0, 917512, 6, 0, 917513, 6, 0, 917514, 6, 0, 917515, 6, 0, 917516, 6, 0, 917517, 6, 0, 917518, 6, 0, 917519, 6, 0, 917520, 6, 0, 917521, 6, 0, 917522, 6, 0, 917523, 6, 0, 917524, 6, 0, 917525, 6, 0, 917526, 6, 0, 917527, 6, 0, 917528, 6, 0, 917529, 6, 0 )
 
 [node name="Play" type="TextureButton" parent="."]
-margin_left = 180.0
-margin_top = 116.0
-margin_right = 228.0
-margin_bottom = 136.0
+margin_left = 179.0
+margin_top = 117.0
+margin_right = 227.0
+margin_bottom = 137.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 2 )
 __meta__ = {
@@ -42,19 +287,25 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 6 )
 
 [node name="Quit" type="TextureButton" parent="."]
-margin_left = 180.0
-margin_top = 160.0
-margin_right = 228.0
-margin_bottom = 180.0
+margin_left = 179.0
+margin_top = 158.0
+margin_right = 227.0
+margin_bottom = 178.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="gRAVITON" type="Sprite" parent="."]
-position = Vector2( 195, 40 )
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 200, 49 )
+
+[node name="gRAVITON" type="Sprite" parent="StaticBody2D"]
 texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 1 )
+shape = SubResource( 10 )
 
 [node name="MenuHover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -84,35 +335,42 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="Creditos2"]
-margin_left = 114.0
-margin_top = 62.0
-margin_right = 273.0
-margin_bottom = 76.0
-text = "Sound Design e Músicas:"
+margin_left = 92.0
+margin_top = 64.0
+margin_right = 286.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 11 )
+text = "Sound Design e Musicas:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label2" type="Label" parent="Creditos2"]
-margin_left = 116.0
+margin_left = 113.0
 margin_top = 81.0
-margin_right = 275.0
+margin_right = 269.0
 margin_bottom = 95.0
+custom_fonts/font = ExtResource( 10 )
 text = "Douglas Chen Ishimoto"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Label" parent="Creditos2"]
-margin_left = 84.0
-margin_top = 123.0
-margin_right = 308.0
-margin_bottom = 137.0
-text = "Programação, artes e Level Design:"
+margin_left = 58.0
+margin_top = 122.0
+margin_right = 343.0
+margin_bottom = 139.0
+custom_fonts/font = ExtResource( 11 )
+text = "Programacao, artes e Level Design:"
 
 [node name="Label4" type="Label" parent="Creditos2"]
-margin_left = 116.0
+margin_left = 117.0
 margin_top = 144.0
-margin_right = 340.0
+margin_right = 264.0
 margin_bottom = 158.0
-text = "Luís Felipe Henriques"
+custom_fonts/font = ExtResource( 10 )
+text = "Luis Felipe Henriques"
 [connection signal="mouse_entered" from="Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="mouse_entered" from="Creditos" to="." method="_on_Creditos_mouse_entered"]
@@ -121,3 +379,5 @@ text = "Luís Felipe Henriques"
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="mouse_entered" from="Creditos2/Voltar" to="." method="_on_Voltar_mouse_entered"]
 [connection signal="pressed" from="Creditos2/Voltar" to="." method="_on_Voltar_pressed"]
+
+[editable path="Player"]

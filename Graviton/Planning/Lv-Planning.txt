@@ -24,6 +24,9 @@ Mecanica: utilizar o reset de gravidade.
 
 LV3 - Desapearing
 Mecanica: usar plataforma que cai/destroi e plataforma que some quando o personagem troca a gravidade.
+Como mostrar essas plataformas de maneira efetiva para o jogador?
+Da para esconder segredos com a plataforma que cai.
+Primeiro tenho que introduzir elas ao jogador.
 
 LV 4 - Up and Down
 Mecanica: usar ventiladores e jogam o player para cima e para baixo em conjunto com o trampolim.

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gravitron_theme.wav-f7130cca79b4bb6f390c610cc3e0404e.sample"
+
+[deps]
+
+source_file="res://Assets/SoundEffects/Gravitron_theme.wav"
+dest_files=[ "res://.import/Gravitron_theme.wav-f7130cca79b4bb6f390c610cc3e0404e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

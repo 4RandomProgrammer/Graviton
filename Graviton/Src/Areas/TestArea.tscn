@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Src/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/SpecialThing/MovingPlatform.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Src/SpecialThing/Trampolim.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Src/SpecialThing/Platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Src/SpecialThing/RotatingBlock.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Src/SpecialThing/reverse.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Src/SpecialThing/OrbitController.tscn" type="PackedScene" id=9]
 
 [node name="TestArea" type="Node2D"]
@@ -17,9 +16,6 @@
 [node name="MovingPlatform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 4, 12 )
 moveTo = Vector2( 0, 192 )
-
-[node name="InputPlatform" parent="." instance=ExtResource( 3 )]
-position = Vector2( 76, 9 )
 
 [node name="Ventilador" parent="." instance=ExtResource( 4 )]
 position = Vector2( 117, 3 )
@@ -35,7 +31,10 @@ position = Vector2( 29, 42 )
 rotationDuration = 10
 
 [node name="Platform" parent="OrbitController" instance=ExtResource( 6 )]
-position = Vector2( 232.764, 106.568 )
+position = Vector2( -47.9697, 251.466 )
 
-[node name="reverse" parent="." instance=ExtResource( 8 )]
-position = Vector2( 71, -28 )
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="InputPlatform" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 76, 9 )
+invertCounter = 1

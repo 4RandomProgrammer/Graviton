@@ -49,7 +49,7 @@ func _physics_process(delta):
 			
 			movement = move_and_slide(movement,UP)
 		DEAD:
-			pass
+			$Sprite.frame = 2
 	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
@@ -99,7 +99,6 @@ func reverse():
 
 func DeathSound():
 	state = DEAD
-	$Sprite.frame = 2
 	if !$DeathSound.is_playing():
 		$DeathSound.play()
 

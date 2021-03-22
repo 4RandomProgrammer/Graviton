@@ -4,11 +4,13 @@ var levels = {
 	"Level0": preload("res://Src/Engine/LevelChooser.tscn"),
 	"Level1": preload("res://Src/Areas/The-Basics.tscn"),
 	"Level2": preload("res://Src/Areas/Rerversing.tscn"),
+	"Level3":preload("res://Src/Areas/Desapearing.tscn")
 }
 
 var fase = null
 var olderLevel = null
 var checkPoint = Vector2.ZERO
+var musicTime = 0.0
 
 onready var anim = $CanvasLayer/Shader/AnimationPlayer
 
@@ -33,6 +35,8 @@ func chooseLevel(level):
 			fase = levels["Level1"].instance()
 		2:
 			fase = levels["Level2"].instance()
+		3:
+			fase = levels["Level3"].instance()
 
 	self.add_child(fase)
 
@@ -41,6 +45,13 @@ func cleanup(level):
 	anim.play("Fade_out")
 	olderLevel = level
 	$Timer.start()
+
+
+func set_musicTime(music):
+	musicTime = music
+	
+func get_musicTime():
+	return musicTime
 
 func startLevel():
 	anim.play("Fade_in")
