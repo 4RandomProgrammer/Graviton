@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 func _on_Play_pressed():
 	Main.setFase(self)
 	select()

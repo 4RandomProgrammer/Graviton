@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Menus/Menu.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Src/Engine/VolumeReg.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Menus/volume-grab.png" type="Texture" id=3]
+
+[node name="VolumeReg" type="HSlider"]
+margin_left = 124.0
+margin_top = 196.0
+margin_right = 325.0
+margin_bottom = 220.0
+mouse_default_cursor_shape = 2
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+value = 100.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume" type="Label" parent="."]
+margin_left = 61.0
+margin_top = -14.0
+margin_right = 121.0
+margin_bottom = 3.0
+custom_fonts/font = ExtResource( 1 )
+text = "Volume:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="."]
+margin_left = 123.0
+margin_top = -14.0
+margin_right = 148.0
+margin_bottom = 3.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = -48.0
+margin_top = 1.0
+margin_right = -3.0
+margin_bottom = 21.0
+text = "Mute"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="." to="." method="_on_VolumeReg_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -5,7 +5,7 @@ enum {
 	DEAD
 }
 
-const MAXGRAVITY = 245
+const MAXGRAVITY = 240
 const SPEED = 125
 const MAX_JUMP_HEIGHT = 36
 const MIN_JUMP_HEIGHT = 20
@@ -35,17 +35,19 @@ func _ready():
 	min_jump_velocity = sqrt(2 * gravity * MIN_JUMP_HEIGHT)
 
 func _physics_process(delta):
+	
 	match state:
 		ALIVE:
-			movement.y += gravityOrder * gravity * delta
 			
 			jumpControl()
 			controls()
 			
+			$Label.set_text(str(movement))
+			
 			if gravityOrder == 1:
-				movement.y = min(movement.y,MAXGRAVITY)
+				movement.y = approach(movement.y,MAXGRAVITY,  gravity * delta)
 			else:
-				movement.y = max(movement.y,-MAXGRAVITY)
+				movement.y = approach(movement.y,-MAXGRAVITY, gravity * delta)
 			
 			movement = move_and_slide(movement,UP)
 		DEAD:
@@ -58,27 +60,27 @@ func _physics_process(delta):
 
 func jumpControl():
 		#Pulo/movimento vertical
-		if Input.is_action_just_pressed("ui_up"):
-			if jumpCounter < 1:
-				$Jump.play()
-				movement.y = max_jump_velocity * - (gravityOrder)
-				jumpCounter += 1
-				
-		if Input.is_action_just_released("ui_up") and movement.y < min_jump_velocity * gravityOrder and jumpCounter :
-			movement.y = min_jump_velocity * gravityOrder
+	if Input.is_action_just_pressed("ui_up"):
+		if jumpCounter < 1:
+			$Jump.play()
+			movement.y = max_jump_velocity * - (gravityOrder)
+			jumpCounter += 1
+			
+	if Input.is_action_just_released("ui_up") and movement.y < min_jump_velocity and jumpCounter :
+		movement.y = min_jump_velocity * gravityOrder
 
 func controls():
 	#Movimento horizontal
 	if Input.is_action_pressed("ui_right"):
 		Esprite.flip_h = false
-		movement.x  += SPEED
-		movement.x = min(SPEED,movement.x)
+		movement.x =  approach(movement.x, SPEED, SPEED)
+	
 	elif Input.is_action_pressed("ui_left"):
 		Esprite.flip_h = true
-		movement.x -= SPEED
-		movement.x = max(movement.x,-SPEED)
+		movement.x = approach(movement.x, -SPEED, SPEED)
+	
 	else:
-		movement.x = 0
+		movement.x = approach(movement.x, 0, SPEED)
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		if InvertCounter < 1:
@@ -100,6 +102,7 @@ func reverse():
 func DeathSound():
 	state = DEAD
 	if !$DeathSound.is_playing():
+		Main.set_vol(-8)
 		$DeathSound.play()
 
 func _on_CollisionDetector_body_entered(body):
@@ -121,4 +124,25 @@ func _check_tilemap(body : TileMap):
 func add_gravity(xvalue,yvalue):
 	movement.y += yvalue
 	movement.x += xvalue
-	print(movement.y)
+
+
+func set_gravity(xvalue,yvalue):
+	movement.y = yvalue
+	movement.x = xvalue
+
+func approach(current, target, amount):
+	if (current < target):
+		current += amount
+		
+		if current > target:
+			return target
+			
+	else:
+		current -= amount
+		
+		if(current < target):
+			return target
+	return current
+
+func _on_DeathSound_finished():
+	Main.set_vol(0)

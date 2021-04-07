@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Src/Menu/Pause Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/pause-btn.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Menus/Menu.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/SoundEffects/hover-menu.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=7]
+[ext_resource path="res://Src/Engine/VolumeReg.tscn" type="PackedScene" id=8]
 
 [node name="Pause Menu" type="Control"]
 pause_mode = 2
@@ -36,9 +37,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Pause"]
-margin_left = 146.0
-margin_right = 230.0
-margin_bottom = 25.0
+margin_left = 171.0
+margin_top = 2.0
+margin_right = 255.0
+margin_bottom = 27.0
 custom_fonts/font = ExtResource( 5 )
 text = "Paused"
 __meta__ = {
@@ -46,10 +48,10 @@ __meta__ = {
 }
 
 [node name="Play" type="TextureButton" parent="Pause"]
-margin_left = 165.0
-margin_top = 90.0
-margin_right = 213.0
-margin_bottom = 108.0
+margin_left = 177.0
+margin_top = 87.0
+margin_right = 225.0
+margin_bottom = 105.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 3 )
 __meta__ = {
@@ -57,12 +59,18 @@ __meta__ = {
 }
 
 [node name="Menu" type="TextureButton" parent="Pause"]
-margin_left = 165.0
-margin_top = 112.0
-margin_right = 213.0
-margin_bottom = 130.0
+margin_left = 177.0
+margin_top = 111.0
+margin_right = 225.0
+margin_bottom = 129.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )
+
+[node name="VolumeReg" parent="Pause" instance=ExtResource( 8 )]
+margin_left = 105.0
+margin_top = 198.0
+margin_right = 306.0
+margin_bottom = 222.0
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -72,7 +80,6 @@ stream = ExtResource( 6 )
 [connection signal="mouse_entered" from="PauseBtn" to="." method="_on_PauseBtn_mouse_entered"]
 [connection signal="pressed" from="PauseBtn" to="." method="_on_PauseBtn_pressed"]
 [connection signal="mouse_entered" from="Pause/Play" to="." method="_on_Play_mouse_entered"]
-[connection signal="pressed" from="Pause/Play" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Pause/Play" to="." method="_on_Play_pressed"]
 [connection signal="mouse_entered" from="Pause/Menu" to="." method="_on_Menu_mouse_entered"]
 [connection signal="pressed" from="Pause/Menu" to="." method="_on_Menu_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Src/Engine/LevelChooser.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Menus/level1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Menus/level2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fonts/04B_19__.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://Src/Engine/VolumeReg.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 7 )
@@ -76,6 +77,21 @@ stream = ExtResource( 4 )
 [node name="select a level" type="Sprite" parent="."]
 position = Vector2( 202, 15 )
 texture = ExtResource( 3 )
+
+[node name="Controles" type="Label" parent="."]
+margin_left = 181.0
+margin_top = 52.0
+margin_right = 374.0
+margin_bottom = 100.0
+text = "[W]- Jump
+[A][D] - Andar
+[ESPAÇO] - Inverte a gravidade
+[ESC] - Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeReg" parent="." instance=ExtResource( 8 )]
 [connection signal="mouse_entered" from="VBoxContainer/Level1" to="." method="_on_Level1_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_Level1_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Level2" to="." method="_on_Level2_mouse_entered"]

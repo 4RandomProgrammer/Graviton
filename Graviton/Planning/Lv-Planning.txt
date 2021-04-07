@@ -27,12 +27,32 @@ Mecanica: usar plataforma que cai/destroi e plataforma que some quando o persona
 Como mostrar essas plataformas de maneira efetiva para o jogador?
 Da para esconder segredos com a plataforma que cai.
 Primeiro tenho que introduzir elas ao jogador.
+O que posso fazer para combinar essas duas mecanicas?
+Como utiliza-las melhor?
+Fazer um jeito combinando plataformas que caem e que inverte a gravidade,
+Fazer um treco de escolher onde ele pode cair, espinhos em cima e outros em baixo, ele tem q cair e logo inverter a gravidade(implementado)
+usar a plataforma que cai para ganhar mas distancia e fazer um pulo maior, combinar vários pulos desses, para fazer um maior.(implementado)
+Fazer platafor que se acesse com um pulo, você espera ela cair pra andar para a próxima.(implementado)
+Como fazer espinhos que se mexem de uma forma melhor?
+De que formas eu desejo explorar mais as mecanicas da fase?
+Pular por cima de um grupo de espinhos, colidir com um quadrado, e passar por baixo;
+Eu posso usar a plataformar que cai para matar o player?
+pular antes para para desviar do espinho no teto, cair pra inverter a gravidade e voltar pro teto sem perigo.
+Fazer o desfio de cima só q ao invés do teto colocar plataformas que aparecem com  inversão da gravidade;(implementado)
+Pular por cima de espinhos, esperar os espinhos q caem passarem.
 
 LV 4 - Up and Down
 Mecanica: usar ventiladores e jogam o player para cima e para baixo em conjunto com o trampolim.
+Corrigir trampolim, para ficar mais útil;
+usar o trampolim.
+
 
 LV-5 rotating
 Mecanica: usar a plataforma que gira e as plataformas que giram.
 
 LV-6: Moving and inverting
 Mecanica: plataforma que move e portal que inverte a gravidade.
+Fazer a sala longa que tem que acertar os portais,
+
+LV - 7 - All
+O portal que inverte a gravidade, vai inverter as plataformas de input. Como usar isso ao meu favor? Primeiro mostrar isso ao jogador. 

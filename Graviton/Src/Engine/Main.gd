@@ -7,10 +7,9 @@ var levels = {
 	"Level3":preload("res://Src/Areas/Desapearing.tscn")
 }
 
-var fase = null
-var olderLevel = null
+var fase = 0
+var olderLevel = 0
 var checkPoint = Vector2.ZERO
-var musicTime = 0.0
 
 onready var anim = $CanvasLayer/Shader/AnimationPlayer
 
@@ -44,17 +43,27 @@ func chooseLevel(level):
 func cleanup(level):
 	anim.play("Fade_out")
 	olderLevel = level
+	start_music(olderLevel)
 	$Timer.start()
 
+func start_music(type):
+	if type == 0:
+		$LvMusic.stop()
+	elif !$LvMusic.playing:
+		$LvMusic.play()
 
-func set_musicTime(music):
-	musicTime = music
-	
-func get_musicTime():
-	return musicTime
+func stop_music():
+	$LvMusic.playing = false
+	$MenuMusic.playing = false
+
+func set_vol(value):
+	$LvMusic.volume_db = value
+
 
 func startLevel():
+	
 	anim.play("Fade_in")
+
 
 func _on_Timer_timeout():
 	chooseLevel(olderLevel)
@@ -62,3 +71,4 @@ func _on_Timer_timeout():
 func _on_AnimationPlayer_animation_finished(animation):
 	if animation == "Fade_out":
 		fase.queue_free()
+		

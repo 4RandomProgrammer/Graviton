@@ -41,7 +41,18 @@
 8 - Lv6;
 9 - Lv7;
 10 - sistema de música (implementado);
+11 - Ver bug do pulo sair mais lento;(Implementado)
+12 - bugTrampolim;(IMPLEMENTADO);
+13 - Passar toda a seleção para o teclado;
+14 - Diminuir os saltos de fé;
+15 - Sistema para diminuir e aumentar volume;(implementado)
+16 - Fazer spikes parecidos com as plataformas;(implementado)
+17 - Fazer a plata forma que gira ao contrário, posso fazer isso tanto para a plataforma que gira no próprio eixo quanto a entorno do quadrado.(implementado)
+
 
 Ideias:
 Fazer animação de seleção level nele entrando e saindo da porta;
 SpeedrunMode
+Fazer colecionaveis, que liberam roupinhas;
+
+indicar caminho, como?
