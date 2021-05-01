@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Src/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/play-btn.png" type="Texture" id=2]
@@ -22,6 +22,12 @@
 [ext_resource path="res://Assets/TileSet/block-nolevel2v2.png" type="Texture" id=20]
 [ext_resource path="res://Assets/TileSet/block-lv-v2-.png" type="Texture" id=21]
 [ext_resource path="res://Src/Player/Player.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/Background/set_tiles.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Background/4-set_tile.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Background/2-set_tile.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Background/3-set_tile.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Background/1-set_tile.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Background/set2_background.png" type="Texture" id=28]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -371,6 +377,66 @@ margin_right = 264.0
 margin_bottom = 158.0
 custom_fonts/font = ExtResource( 10 )
 text = "Luis Felipe Henriques"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Bg" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 480 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Bg"]
+texture = ExtResource( 28 )
+centered = false
+
+[node name="FarAway Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_offset = Vector2( 0, -100 )
+motion_mirroring = Vector2( 640, 351 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/FarAway Blocks"]
+modulate = Color( 1, 1, 1, 0.588235 )
+texture = ExtResource( 23 )
+centered = false
+
+[node name="Middle Blocks F" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 0.6 )
+motion_mirroring = Vector2( 800, 438.75 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Middle Blocks F"]
+modulate = Color( 1, 1, 1, 0.666667 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="Middle Blocks M" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.8 )
+motion_offset = Vector2( 0, 100 )
+motion_mirroring = Vector2( 960, 526.5 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Middle Blocks M"]
+modulate = Color( 1, 1, 1, 0.784314 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="Middle Blocks N" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.85, 0.85 )
+motion_offset = Vector2( 0, -75 )
+motion_mirroring = Vector2( 1120, 614.25 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Middle Blocks N"]
+modulate = Color( 1, 1, 1, 0.862745 )
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 24 )
+centered = false
+
+[node name="Nearby Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1280, 702 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Nearby Blocks"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 27 )
+centered = false
 [connection signal="mouse_entered" from="Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="mouse_entered" from="Creditos" to="." method="_on_Creditos_mouse_entered"]

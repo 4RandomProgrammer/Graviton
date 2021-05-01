@@ -1,5 +1,9 @@
 extends Node2D
 
+
+func _ready():
+	Main.start_music(0)
+
 func _on_Play_pressed():
 	Main.setFase(self)
 	select()

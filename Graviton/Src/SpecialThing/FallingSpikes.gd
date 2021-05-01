@@ -16,7 +16,7 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
-	velocity =  $Spike.move_and_slide(velocity,Vector2.UP);
+	velocity =  $Spike.move_and_slide(velocity,Vector2.UP)
 
 func _on_FallArea_body_entered(_body):
 	if !is_triggered:
@@ -33,22 +33,12 @@ func _on_AnimationPlayer_animation_finished(_anim_name):
 
 func _on_Timer_timeout():
 	set_physics_process(false)
-	yield(get_tree(),"physics_frame")
-	var temp = $Spike.collision_layer
-	$Spike.collision_layer = 0
+	$Spike/DeathZone/CollisionPolygon2D.set_deferred("disabled",true)
 	$Spike.global_position = reset_position
-	yield(get_tree(),"physics_frame")
-	$Spike.collision_layer = temp
 	is_triggered = false
 	$FallArea/CollisionShape2D.set_deferred("disabled",false)
-	GRAVITY = oldGravity
+	$Spike/DeathZone/CollisionPolygon2D.set_deferred("disabled",false)
 
 
 func _on_DeathZone_body_entered(_body):
 	set_physics_process(false)
-
-
-func _on_StopArea_body_entered(_body):
-	print("aaaaaaaaaaaaaaaa")
-	oldGravity = GRAVITY
-	GRAVITY = 0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/Engine/Main.gd" type="Script" id=1]
 [ext_resource path="res://Src/Shader/ColorRect.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/SoundEffects/Gravitron_theme.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/SoundEffects/Graviton_bg.wav" type="AudioStream" id=4]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -17,9 +18,10 @@ layer = 6
 [node name="Shader" parent="CanvasLayer" instance=ExtResource( 2 )]
 
 [node name="LvMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="CanvasLayer/Shader/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

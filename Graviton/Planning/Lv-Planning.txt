@@ -45,10 +45,20 @@ LV 4 - Up and Down
 Mecanica: usar ventiladores e jogam o player para cima e para baixo em conjunto com o trampolim.
 Corrigir trampolim, para ficar mais útil;
 usar o trampolim.
+Colocar uns espinho em cima e o trampolim em baixo, para que o player tenha q desviar do trampolim;(Implementado)
+Vários ventiladores seguidos, para que o player tenha chegar uma certa altura e passar para o próximo ventilador.(implementado)
+Vazer um desafio que você possa ao sair do ventilador só cair ou inverter a gravidade.(implementado)
+Fazer salto com pulos maiores com o trampolim, salto retos.(implementado)
+Trocar desafios, não colocar desafios repetidos.
+Usar os ventiladores como corrente de vento contra o jogador,
+Usar o ventilador que mexe na horizontal.
 
 
 LV-5 rotating
 Mecanica: usar a plataforma que gira e as plataformas que giram.
+Cuidado ao colocar muitas plataformas que giram consecutivas.
+Pular acertar uma plataforma que gira com a gravidade e ir pulando de uma plataforma a outra com espaço,
+
 
 LV-6: Moving and inverting
 Mecanica: plataforma que move e portal que inverte a gravidade.

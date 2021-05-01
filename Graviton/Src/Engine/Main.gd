@@ -4,7 +4,9 @@ var levels = {
 	"Level0": preload("res://Src/Engine/LevelChooser.tscn"),
 	"Level1": preload("res://Src/Areas/The-Basics.tscn"),
 	"Level2": preload("res://Src/Areas/Rerversing.tscn"),
-	"Level3":preload("res://Src/Areas/Desapearing.tscn")
+	"Level3":preload("res://Src/Areas/Desapearing.tscn"),
+	"Level4":preload("res://Src/Areas/Ups and Downs.tscn"),
+	"Level5":preload("res://Src/Areas/Rotating.tscn")
 }
 
 var fase = 0
@@ -36,6 +38,10 @@ func chooseLevel(level):
 			fase = levels["Level2"].instance()
 		3:
 			fase = levels["Level3"].instance()
+		4:
+			fase = levels["Level4"].instance()
+		5:
+			fase = levels["Level5"].instance()
 
 	self.add_child(fase)
 
@@ -49,8 +55,11 @@ func cleanup(level):
 func start_music(type):
 	if type == 0:
 		$LvMusic.stop()
+		if !$MenuMusic.playing: 
+			$MenuMusic.play()
 	elif !$LvMusic.playing:
 		$LvMusic.play()
+		$MenuMusic.stop()
 
 func stop_music():
 	$LvMusic.playing = false

@@ -35,8 +35,8 @@
 		- creditos;
 	- Level ender;(implementado)
 	- CheckPoint; (implementado)
-5 - Lv3;
-6 - Lv4;
+5 - Lv3;(implementado)
+6 - Lv4;()
 7 - Lv5;
 8 - Lv6;
 9 - Lv7;
@@ -48,11 +48,15 @@
 15 - Sistema para diminuir e aumentar volume;(implementado)
 16 - Fazer spikes parecidos com as plataformas;(implementado)
 17 - Fazer a plata forma que gira ao contrário, posso fazer isso tanto para a plataforma que gira no próprio eixo quanto a entorno do quadrado.(implementado)
-
-
+18 - Background:
+	- Composição de quadrados(IMPLEMENTADO),
+	- Quadrados animados,
+	- Minimapa.
+19 - New Death Animation,
 Ideias:
 Fazer animação de seleção level nele entrando e saindo da porta;
 SpeedrunMode
 Fazer colecionaveis, que liberam roupinhas;
-
 indicar caminho, como?
+Fazer back ground animavel com quadrados subindo.
+

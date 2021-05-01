@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Graviton"
 run/main_scene="res://Src/Menu/Menu.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://Assets/icon.png"
 
 [autoload]

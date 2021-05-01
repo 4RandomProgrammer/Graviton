@@ -27,3 +27,20 @@ func _on_Level3_pressed():
 func _on_Level3_mouse_entered():
 	$MenuHover.play()
 
+
+
+func _on_Button_pressed():
+	soundEffects.play()
+	Main.cleanup(4)
+
+
+func _on_Button_mouse_entered():
+	$MenuHover.play()
+
+
+func _on_Level5_pressed():
+	soundEffects.play()
+	Main.cleanup(5)
+
+func _on_Level5_mouse_entered():
+	$MenuHover.play()
