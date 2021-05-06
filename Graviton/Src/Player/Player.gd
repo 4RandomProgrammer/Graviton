@@ -13,6 +13,7 @@ const MAX_JUMP_HEIGHT = 36
 const MIN_JUMP_HEIGHT = 20
 const jump_duration = 0.20
 
+var onRotating  = false
 var snap = false
 var movement = Vector2.ZERO
 var gravityOrder = 1
@@ -26,7 +27,7 @@ var min_jump_velocity
 var gravity
 var positionUp = Vector2(0,-6)
 var positionDown = Vector2(0,3)
-var snapVec = Vector2(0,8)
+var snapVec = Vector2(0,2)
 
 export (int)var MaxHealth = 3
 
@@ -38,9 +39,10 @@ func _ready():
 	gravity = 2 * MAX_JUMP_HEIGHT / pow(jump_duration, 2)
 	max_jump_velocity = sqrt(2 * gravity * MAX_JUMP_HEIGHT)
 	min_jump_velocity = sqrt(2 * gravity * MIN_JUMP_HEIGHT)
-
-func _physics_process(delta):
 	
+#BUG QUANDO ELE PULA EM UMA RAMPA, POR ALGUM MOTIVO ELE VAI PRO MÁX DA GRAVIDADE
+#E NÃO O MAX DO PULO, O PQ? EU NÃO SEI, SEI QUE ACONTECE.
+func _physics_process(delta):
 	match state:
 		ALIVE:
 			
@@ -48,9 +50,12 @@ func _physics_process(delta):
 			jumpControl()
 			controls()
 			if snap:
-				snapVec = Vector2(0,8 * gravityOrder)
+				snapVec = Vector2(0,2 * gravityOrder)
+			elif !is_on_floor():
+				snapVec = Vector2.ZERO
 			else:
 				snapVec = Vector2.ZERO
+			
 			$Label.set_text(str(movement))
 			
 		DEAD:
@@ -67,13 +72,12 @@ func gravityControl(delta):
 		movement.y = approach(movement.y,-MAXGRAVITY, gravity * delta)
 
 func jumpControl():
-		#Pulo/movimento vertical
-	if Input.is_action_just_pressed("ui_up"):
-		if jumpCounter < 1:
-			$Jump.play()
-			movement.y = max_jump_velocity * - (gravityOrder)
-			jumpCounter += 1
-			snap = false
+	#Pulo/movimento vertical
+	if Input.is_action_just_pressed("ui_up") and jumpCounter < 1:
+		snap = false
+		$Jump.play()
+		movement.y = max_jump_velocity * - (gravityOrder)
+		jumpCounter += 1
 			
 	if Input.is_action_just_released("ui_up") and movement.y < min_jump_velocity and jumpCounter :
 		movement.y = min_jump_velocity * gravityOrder
@@ -94,16 +98,15 @@ func controls():
 	
 #	var move_direction = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 #	movement.x = lerp(movement.x, SPEED * move_direction, 0.2)
-	
 	if Input.is_action_just_pressed("ui_accept"):
 		if InvertCounter < 1:
 			InvertCounter += 1
 			Esprite.frame = 1
-			reverse()
+			reverse(true)
 
-func reverse():
-	
-	$ChangeGravity.play()
+func reverse(play):
+	if play:
+		$ChangeGravity.play()
 	snap = false
 	gravityOrder *= -1
 	
@@ -132,7 +135,9 @@ func _on_CollisionDetector_body_entered(body):
 	if body is TileMap:
 		_check_tilemap(body)
 	
-	snap = true
+	if !snap:
+		snap = true
+	
 	InvertCounter = 0
 	$Sprite.frame = 0
 	

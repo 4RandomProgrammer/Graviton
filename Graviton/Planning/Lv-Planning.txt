@@ -1,4 +1,5 @@
 Se lembre: There is no need for jumping
+	   Sempre colocar um desafio novo, e se for reaproveitar um antigo, tente fazer um twist, algo diferente.
 
 Lv1 - The Basics. Basic
 - O que eu quero testar/ensinar para os jogadores?
@@ -57,12 +58,20 @@ Usar o ventilador que mexe na horizontal.
 LV-5 rotating
 Mecanica: usar a plataforma que gira e as plataformas que giram.
 Cuidado ao colocar muitas plataformas que giram consecutivas.
-Pular acertar uma plataforma que gira com a gravidade e ir pulando de uma plataforma a outra com espaço,
+Pular acertar uma plataforma que gira com a gravidade e ir pulando de uma plataforma a outra com espaço,(implementado)
+Ir pulando de spike em spike, talvez muito hard????
 
 
 LV-6: Moving and inverting
 Mecanica: plataforma que move e portal que inverte a gravidade.
 Fazer a sala longa que tem que acertar os portais,
+Labirinto de portais, identificar qual portal tem que ser acertado para passar, ideia de ter multiplas resoluções.
+Zig zag,
+Misturar a plataforma que vai para os lados com o portal;
+Cair e ter que desviar dos espinhos e acertar o portal;
+"Torre", a plataforma vai subindo e o jogador tem quem desviar dos espinhos;
+
+
 
 LV - 7 - All
 O portal que inverte a gravidade, vai inverter as plataformas de input. Como usar isso ao meu favor? Primeiro mostrar isso ao jogador. 

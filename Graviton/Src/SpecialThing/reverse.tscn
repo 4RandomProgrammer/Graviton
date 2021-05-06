@@ -4,8 +4,9 @@
 [ext_resource path="res://Assets/SoundEffects/portal_gravity2.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Interactbles/portal-try.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 16 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.0
+height = 18.0
 
 [node name="reverse" type="Area2D"]
 collision_layer = 2147483648

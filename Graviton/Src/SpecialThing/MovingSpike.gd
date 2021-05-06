@@ -21,12 +21,14 @@ func _physics_process(_delta):
 
 
 func _on_Timer_timeout():
+	$Sprite.flip_v = !$Sprite.flip_v
 	speed_x *= -1
 	speed_y *= -1
 	$Timer.start(reset_time)
 
 
 func _on_ResetPosition_body_entered(_body):
+	$Sprite.flip_v = !$Sprite.flip_v
 	speed_x *= -1
 	speed_y *= -1
 	$Timer.start(reset_time)
