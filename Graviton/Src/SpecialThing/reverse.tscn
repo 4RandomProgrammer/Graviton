@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Interactbles/portal-try.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.0
+radius = 6.0
 height = 18.0
 
 [node name="reverse" type="Area2D"]
@@ -19,6 +19,8 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
+"SFX",
+]]
 stream = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_reverse_body_entered"]

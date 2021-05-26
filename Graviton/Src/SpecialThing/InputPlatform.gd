@@ -24,7 +24,7 @@ func _input(event):
 	playerInvert = player.InvertCounter
 	#atualizar o valor do invert counter
 	
-	if event.is_action_pressed("ui_accept") and playerInvert == 0:
+	if event.is_action_pressed("InvertGravity") and playerInvert == 0:
 		
 		$CollisionShape2D.disabled = !$CollisionShape2D.disabled
 		

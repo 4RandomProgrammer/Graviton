@@ -20,23 +20,23 @@
 		-Lv 1;(Implementado)
 		-Lv 2; (Implementado)
 		-Lv 3;(Implementado)
-		-Lv 4;
-		-Lv 5;
-		-Lv 6;
+		-Lv 4;(Implementado)
+		-Lv 5;(Implementado)
+		-Lv 6;(Implementado)
 		-Lv 7;
 	- Tela titulo;
-		- Sprite de fundo(?);
+		- Sprite de fundo(?);(Implementado)
 		- Titulo;(implementado);
 	- Seleção de fase;
 		- Sprite de fundo(?);
 		- Título; (implementado);
 	- Creditos;
 		- Titulo; (Implementado)
-		- creditos;
+		- creditos;(Implementado)
 	- Level ender;(implementado)
 	- CheckPoint; (implementado)
 5 - Lv3;(implementado)
-6 - Lv4;()
+6 - Lv4;(implementado)
 7 - Lv5;
 8 - Lv6;
 9 - Lv7;
@@ -48,15 +48,18 @@
 15 - Sistema para diminuir e aumentar volume;(implementado)
 16 - Fazer spikes parecidos com as plataformas;(implementado)
 17 - Fazer a plata forma que gira ao contrário, posso fazer isso tanto para a plataforma que gira no próprio eixo quanto a entorno do quadrado.(implementado)
-18 - Background:
+18 - Background:(Implementado)
 	- Composição de quadrados(IMPLEMENTADO),
 	- Quadrados animados,
 	- Minimapa.
-19 - New Death Animation,
+19 - New Death Animation (implementado),
+20 - SpeedrunMode
+21 - Fazer colecionaveis, que liberam roupinhas;
 Ideias:
 Fazer animação de seleção level nele entrando e saindo da porta;
-SpeedrunMode
-Fazer colecionaveis, que liberam roupinhas;
+
 indicar caminho, como?
 Fazer back ground animavel com quadrados subindo.
+mudar a camera;
+
 

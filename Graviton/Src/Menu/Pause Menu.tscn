@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Src/Menu/Pause Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menus/pause-btn.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Menus/resume-btn.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Menus/menu-btn.png" type="Texture" id=4]
+[ext_resource path="res://Src/Menu/BtnFocus.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Menus/Menu.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/SoundEffects/hover-menu.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=7]
 [ext_resource path="res://Src/Engine/VolumeReg.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Menus/voltar-btn.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Menus/options.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Menus/menu-btn.png" type="Texture" id=11]
 
 [node name="Pause Menu" type="Control"]
 pause_mode = 2
@@ -47,39 +50,107 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="TextureButton" parent="Pause"]
-margin_left = 177.0
-margin_top = 87.0
-margin_right = 225.0
-margin_bottom = 105.0
-mouse_default_cursor_shape = 2
+[node name="Play" parent="Pause" instance=ExtResource( 4 )]
+margin_left = 172.0
+margin_top = 84.0
+margin_right = 220.0
+margin_bottom = 102.0
+focus_neighbour_left = NodePath("../Menu")
+focus_neighbour_top = NodePath("../Menu")
+focus_neighbour_right = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../Button")
 texture_normal = ExtResource( 3 )
+
+[node name="Button" parent="Pause" instance=ExtResource( 4 )]
+margin_left = 166.0
+margin_top = 105.0
+margin_right = 224.0
+margin_bottom = 123.0
+focus_neighbour_left = NodePath("../Play")
+focus_neighbour_top = NodePath("../Play")
+focus_neighbour_right = NodePath("../Menu")
+focus_neighbour_bottom = NodePath("../Menu")
+texture_normal = ExtResource( 10 )
+
+[node name="Menu" parent="Pause" instance=ExtResource( 4 )]
+margin_left = 172.0
+margin_top = 126.0
+margin_right = 220.0
+margin_bottom = 144.0
+focus_neighbour_left = NodePath("../Button")
+focus_neighbour_top = NodePath("../Button")
+focus_neighbour_right = NodePath("../Play")
+focus_neighbour_bottom = NodePath("../Play")
+texture_normal = ExtResource( 11 )
+
+[node name="Options" type="ColorRect" parent="."]
+visible = false
+margin_right = 400.0
+margin_bottom = 224.0
+color = Color( 0.027451, 0.0117647, 0.164706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="TextureButton" parent="Pause"]
-margin_left = 177.0
-margin_top = 111.0
-margin_right = 225.0
-margin_bottom = 129.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 4 )
+[node name="Label" type="Label" parent="Options"]
+margin_left = 171.0
+margin_top = 2.0
+margin_right = 255.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 5 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VolumeReg" parent="Pause" instance=ExtResource( 8 )]
-margin_left = 105.0
-margin_top = 198.0
-margin_right = 306.0
-margin_bottom = 222.0
+[node name="VolumeReg" parent="Options" instance=ExtResource( 8 )]
+margin_left = 108.0
+margin_top = 125.0
+margin_right = 309.0
+margin_bottom = 149.0
+audioFor = 2
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
+[node name="VolumeReg2" parent="Options" instance=ExtResource( 8 )]
+margin_left = 108.0
+margin_top = 87.0
+margin_right = 309.0
+margin_bottom = 111.0
+audioFor = 1
+
+[node name="VolumeReg3" parent="Options" instance=ExtResource( 8 )]
+margin_left = 108.0
+margin_top = 47.0
+margin_right = 309.0
+margin_bottom = 71.0
+
+[node name="TextureButton" parent="Options" instance=ExtResource( 4 )]
+margin_left = 187.0
+margin_top = 171.0
+margin_right = 235.0
+margin_bottom = 189.0
+texture_normal = ExtResource( 9 )
+
+[node name="Click" type="AudioStreamPlayer" parent="." groups=[
+"SFX",
+]]
 stream = ExtResource( 7 )
+bus = "SFX"
 
-[node name="Entered" type="AudioStreamPlayer" parent="."]
+[node name="Entered" type="AudioStreamPlayer" parent="." groups=[
+"SFX",
+]]
 stream = ExtResource( 6 )
+bus = "SFX"
 [connection signal="mouse_entered" from="PauseBtn" to="." method="_on_PauseBtn_mouse_entered"]
 [connection signal="pressed" from="PauseBtn" to="." method="_on_PauseBtn_pressed"]
+[connection signal="focus_entered" from="Pause/Play" to="." method="_on_Play_focus_entered"]
 [connection signal="mouse_entered" from="Pause/Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="pressed" from="Pause/Play" to="." method="_on_Play_pressed"]
+[connection signal="focus_entered" from="Pause/Button" to="." method="_on_Button_focus_entered"]
+[connection signal="mouse_entered" from="Pause/Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Pause/Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="Pause/Menu" to="." method="_on_Menu_focus_entered"]
 [connection signal="mouse_entered" from="Pause/Menu" to="." method="_on_Menu_mouse_entered"]
 [connection signal="pressed" from="Pause/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="focus_entered" from="Options/TextureButton" to="." method="_on_TextureButton_focus_entered"]
+[connection signal="pressed" from="Options/TextureButton" to="." method="_on_TextureButton_pressed"]

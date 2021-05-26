@@ -60,6 +60,7 @@ Mecanica: usar a plataforma que gira e as plataformas que giram.
 Cuidado ao colocar muitas plataformas que giram consecutivas.
 Pular acertar uma plataforma que gira com a gravidade e ir pulando de uma plataforma a outra com espaço,(implementado)
 Ir pulando de spike em spike, talvez muito hard????
+N sei o que fazer, como explorar essas mecanicas...
 
 
 LV-6: Moving and inverting

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Src/Engine/LevelChooser.gd" type="Script" id=1]
 [ext_resource path="res://Assets/SoundEffects/menu.wav" type="AudioStream" id=2]
@@ -7,9 +7,13 @@
 [ext_resource path="res://Assets/Menus/level1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Menus/level2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Menus/level3.png" type="Texture" id=7]
-[ext_resource path="res://Src/Engine/VolumeReg.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Src/Menu/BtnFocus.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Menus/level4.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Menus/lv5.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Menus/Menu.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Assets/Menus/level6.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Fonts/VolumeReg.tres" type="DynamicFont" id=13]
+[ext_resource path="res://Src/Engine/CheckboxFocus.tscn" type="PackedScene" id=14]
 
 [node name="LevelChooser" type="CanvasLayer"]
 layer = -1
@@ -27,60 +31,95 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 32.0
+margin_left = 44.0
 margin_top = 48.0
-margin_right = 97.0
+margin_right = 109.0
 margin_bottom = 200.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level1" type="TextureButton" parent="VBoxContainer"]
+[node name="Level1" parent="VBoxContainer" instance=ExtResource( 8 )]
 margin_right = 65.0
 margin_bottom = 26.0
-mouse_default_cursor_shape = 2
+focus_neighbour_left = NodePath("../../VBoxContainer2/Level4")
+focus_neighbour_top = NodePath("../../VBoxContainer2/Level6")
+focus_neighbour_right = NodePath("../../VBoxContainer2/Level4")
+focus_neighbour_bottom = NodePath("../Level2")
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_focused = ExtResource( 5 )
 
-[node name="Level2" type="TextureButton" parent="VBoxContainer"]
+[node name="Level2" parent="VBoxContainer" instance=ExtResource( 8 )]
 margin_top = 30.0
 margin_right = 65.0
 margin_bottom = 56.0
-mouse_default_cursor_shape = 2
+focus_neighbour_left = NodePath("../../VBoxContainer2/Level5")
+focus_neighbour_top = NodePath("../Level1")
+focus_neighbour_right = NodePath("../../VBoxContainer2/Level5")
+focus_neighbour_bottom = NodePath("../Level3")
 texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
 
-[node name="Level3" type="TextureButton" parent="VBoxContainer"]
+[node name="Level3" parent="VBoxContainer" instance=ExtResource( 8 )]
 margin_top = 60.0
 margin_right = 65.0
 margin_bottom = 86.0
-mouse_default_cursor_shape = 2
+focus_neighbour_left = NodePath("../../VBoxContainer2/Level6")
+focus_neighbour_top = NodePath("../Level2")
+focus_neighbour_right = NodePath("../../VBoxContainer2/Level6")
+focus_neighbour_bottom = NodePath("../../CheckBox")
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-margin_left = 106.0
+margin_left = 151.0
 margin_top = 48.0
-margin_right = 179.0
+margin_right = 224.0
 margin_bottom = 195.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="TextureButton" parent="VBoxContainer2"]
+[node name="Level4" parent="VBoxContainer2" instance=ExtResource( 8 )]
 margin_right = 73.0
 margin_bottom = 26.0
-mouse_default_cursor_shape = 2
+focus_neighbour_left = NodePath("../../VBoxContainer/Level1")
+focus_neighbour_top = NodePath("../../VBoxContainer/Level3")
+focus_neighbour_right = NodePath("../../VBoxContainer/Level1")
+focus_neighbour_bottom = NodePath("../Level5")
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
+texture_focused = ExtResource( 9 )
 
-[node name="Level5" type="TextureButton" parent="VBoxContainer2"]
+[node name="Level5" parent="VBoxContainer2" instance=ExtResource( 8 )]
 margin_top = 30.0
 margin_right = 73.0
 margin_bottom = 56.0
+focus_neighbour_left = NodePath("../../VBoxContainer/Level2")
+focus_neighbour_top = NodePath("../Level4")
+focus_neighbour_right = NodePath("../../VBoxContainer/Level2")
+focus_neighbour_bottom = NodePath("../Level6")
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 10 )
 texture_hover = ExtResource( 10 )
-stretch_mode = 1
+texture_focused = ExtResource( 10 )
+
+[node name="Level6" parent="VBoxContainer2" instance=ExtResource( 8 )]
+margin_top = 60.0
+margin_right = 73.0
+margin_bottom = 86.0
+focus_neighbour_left = NodePath("../../VBoxContainer/Level3")
+focus_neighbour_top = NodePath("../Level5")
+focus_neighbour_right = NodePath("../../VBoxContainer/Level3")
+focus_neighbour_bottom = NodePath("../../CheckBox")
+texture_normal = ExtResource( 12 )
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 margin_left = 291.0
@@ -91,37 +130,78 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuSelectionSound" type="AudioStreamPlayer2D" parent="."]
+[node name="MenuSelectionSound" type="AudioStreamPlayer2D" parent="." groups=[
+"SFX",
+]]
 stream = ExtResource( 2 )
+bus = "SFX"
 
-[node name="MenuHover" type="AudioStreamPlayer" parent="."]
+[node name="MenuHover" type="AudioStreamPlayer" parent="." groups=[
+"SFX",
+]]
 stream = ExtResource( 4 )
+bus = "SFX"
 
 [node name="select a level" type="Sprite" parent="."]
 position = Vector2( 202, 15 )
 texture = ExtResource( 3 )
 
 [node name="Controles" type="Label" parent="."]
-margin_left = 181.0
-margin_top = 52.0
-margin_right = 374.0
-margin_bottom = 100.0
+margin_left = 231.0
+margin_top = 42.0
+margin_right = 399.0
+margin_bottom = 139.0
+custom_fonts/font = ExtResource( 11 )
 text = "[W]- Jump
 [A][D] - Andar
-[ESPAÇO] - Inverte a gravidade
+[SPACE] - Inverte a
+gravidade
 [ESC] - Pause"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VolumeReg" parent="." instance=ExtResource( 8 )]
+[node name="Timers" type="Label" parent="."]
+visible = false
+margin_left = 281.0
+margin_top = 139.0
+margin_right = 399.0
+margin_bottom = 222.0
+custom_fonts/font = ExtResource( 13 )
+text = "Tempos:
+1:      5:
+2:      6:
+3:
+4:"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" parent="." instance=ExtResource( 14 )]
+focus_neighbour_left = NodePath("../VBoxContainer/Level3")
+focus_neighbour_top = NodePath("../VBoxContainer/Level3")
+focus_neighbour_right = NodePath("../VBoxContainer/Level1")
+focus_neighbour_bottom = NodePath("../VBoxContainer/Level1")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+[connection signal="focus_entered" from="VBoxContainer/Level1" to="." method="_on_Level1_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Level1" to="." method="_on_Level1_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Level2" to="." method="_on_Level2_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Level2" to="." method="_on_Level2_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Level3" to="." method="_on_Level3_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Level3" to="." method="_on_Level3_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Level3" to="." method="_on_Level3_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer2/Button" to="." method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="VBoxContainer2/Level4" to="." method="_on_Level4_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer2/Level4" to="." method="_on_Level4_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer2/Level4" to="." method="_on_Level4_pressed"]
+[connection signal="focus_entered" from="VBoxContainer2/Level5" to="." method="_on_Level5_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer2/Level5" to="." method="_on_Level5_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer2/Level5" to="." method="_on_Level5_pressed"]
+[connection signal="focus_entered" from="VBoxContainer2/Level6" to="." method="_on_Level6_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer2/Level6" to="." method="_on_Level6_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer2/Level6" to="." method="_on_Level6_pressed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]

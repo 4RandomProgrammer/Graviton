@@ -38,8 +38,11 @@ shape = SubResource( 1 )
 wait_time = 2.0
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=[
+"SFX",
+]]
 stream = ExtResource( 3 )
+bus = "SFX"
 
 [node name="Particles2D" type="Particles2D" parent="."]
 process_material = SubResource( 2 )
