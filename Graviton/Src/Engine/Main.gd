@@ -9,9 +9,9 @@ var levels = {
 	"Level5":preload("res://Src/Areas/Rotating.tscn"),
 	"Level6":preload("res://Src/Areas/Inverting and Moving.tscn")
 }
-var timers = ["0:0", "0:0", "0:0", "0:0", "0:0", "0:0", "0:0", "0:0"]
 
-var currentLevel = 1
+var string = "0:0:0"
+var currentLevel = 0
 var fase = 0
 var olderLevel = 0
 var checkPoint = Vector2.ZERO
@@ -23,7 +23,7 @@ var collected = [["N", "N", "N"], ["N", "N", "N"], ["N", "N", "N"], ["N", "N", "
 onready var anim = $CanvasLayer/Shader/AnimationPlayer
 
 func getColetaveis():
-	return collected[currentLevel - 1]
+	return collected[currentLevel]
 
 func setColetaveis(colet1, colet2, colet3):
 	collected[currentLevel][0] = colet1
@@ -68,15 +68,19 @@ func chooseLevel(level):
 			currentLevel = 6
 
 	self.add_child(fase)
-	if speed:
+	
+	if speed and $SpeedrunTimer.is_stopped():
 		$SpeedrunTimer.start()
+	
 #método para limpar a fase selecionada
 func cleanup(level):
 	if speed and level == 0:
-		timers[currentLevel] = str(m) + ":" + str(seg);
+		string = str(currentLevel) + ":" +  str(m) + ":" + str(seg)
+		print(string)
 		$SpeedrunTimer.stop()
-		
-	
+		m = 0
+		seg = 0
+
 	anim.play("Fade_out")
 	olderLevel = level
 	start_music(olderLevel)

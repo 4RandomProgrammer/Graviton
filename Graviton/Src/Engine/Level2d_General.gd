@@ -26,15 +26,15 @@ func colectedControl():
 		$Coletaveis/Coletavel0.visible = true
 		$Coletaveis/Coletavel0/CollisionShape2D.set_deferred("disabled", false)
 	
-	if(colected[0] == "S"):
-		$Coletaveis/Coletavel1.queue_free()
+	if(colected[1] == "S"):
+		$Coletaveis/Coletavel1.visible = false
 		$Coletaveis/Coletavel1/CollisionShape2D.set_deferred("disabled", true)
 	else:
 		$Coletaveis/Coletavel1.visible = true
 		$Coletaveis/Coletavel1/CollisionShape2D.set_deferred("disabled", false)
 	
-	if(colected[0] == "S"):
-		$Coletaveis/Coletavel1.queue_free()
+	if(colected[2] == "S"):
+		$Coletaveis/Coletavel1.visible = false
 		$Coletaveis/Coletavel1/CollisionShape2D.set_deferred("disabled", true)
 	else:
 		$Coletaveis/Coletavel1.visible = true

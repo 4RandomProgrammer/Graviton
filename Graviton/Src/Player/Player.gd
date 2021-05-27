@@ -154,15 +154,12 @@ func _on_CollisionDetector_body_entered(body):
 	if body is TileMap:
 		_check_tilemap(body)
 	
-	if !snap:
-		snap = true
-	
-	InvertCounter = 0
-	$Sprite.frame = 0
-	
 	#não soube uma forma melhor que isso
 	if(body != self):
 		jumpCounter = 0
+		InvertCounter = 0
+		$Sprite.frame = 0
+		snap = true
 
 func _check_tilemap(body : TileMap):
 	if body.has_method("_on_DeathZone_body_entered"):

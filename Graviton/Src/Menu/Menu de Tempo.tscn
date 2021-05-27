@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Src/Player/timer.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Src/Menu/Menu de Tempo.gd" type="Script" id=2]
+[ext_resource path="res://Src/Menu/BtnFocus.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Menus/voltar-btn.png" type="Texture" id=4]
+
+[node name="Menu de Tempo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 400.0
+margin_bottom = 224.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 3.0
+margin_right = 254.0
+margin_bottom = 17.0
+text = "Melhores Tempos:"
+
+[node name="Tempos" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 58.0
+margin_right = 254.0
+margin_bottom = 223.0
+custom_fonts/font = ExtResource( 1 )
+text = "1: 0:0
+2: 0:0
+3: 0:0
+4: 0:0
+5: 0:0
+6: 0:0
+7: 0:0"
+
+[node name="BtnFocus" parent="." instance=ExtResource( 3 )]
+margin_left = 351.0
+margin_top = 204.0
+margin_right = 399.0
+margin_bottom = 222.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+texture_normal = ExtResource( 4 )
+[connection signal="pressed" from="BtnFocus" to="." method="_on_BtnFocus_pressed"]
