@@ -61,6 +61,10 @@ Cuidado ao colocar muitas plataformas que giram consecutivas.
 Pular acertar uma plataforma que gira com a gravidade e ir pulando de uma plataforma a outra com espaço,(implementado)
 Ir pulando de spike em spike, talvez muito hard????
 N sei o que fazer, como explorar essas mecanicas...
+O que eu quero mostrar ao jogador?
+Fazer a plataforma que gira elevar o jogador, fazer com que ele chegue ao topo, pule e tenha que inverter a gravidade para chegar numa
+plataforma que gira. E ai da pra fazer um sequencia disso em seguida.
+Falta path de speedRun. Mas tudo bem, a fase ta terminada.
 
 
 LV-6: Moving and inverting
@@ -68,11 +72,20 @@ Mecanica: plataforma que move e portal que inverte a gravidade.
 Fazer a sala longa que tem que acertar os portais,
 Labirinto de portais, identificar qual portal tem que ser acertado para passar, ideia de ter multiplas resoluções.
 Zig zag,
-Misturar a plataforma que vai para os lados com o portal;
+Misturar a plataforma que vai para os lados com o portal, fazer o jogador ter que dar a volta utilizando o portal e a plataforma;
+Primeiro pode ser só o portal e depois os 2.
 Cair e ter que desviar dos espinhos e acertar o portal;
 "Torre", a plataforma vai subindo e o jogador tem quem desviar dos espinhos;
-
+Espinho que se movem e se cruzam.
+Cair desviando para pegar a moeda.(ok)
+Um portal em cima do outro.
 
 
 LV - 7 - All
 O portal que inverte a gravidade, vai inverter as plataformas de input. Como usar isso ao meu favor? Primeiro mostrar isso ao jogador. 
+Plataforma que se move em linha reta e o jogador tem que desviar dos vários espinhos.
+Como que cada feature se complementa?
+Eu penso que entender cada coisa disso tem relação com essa fase. Pq assim eu também consigo encontrar as plataformas e como usa-las de jeitos diferentes.
+Ideias:
+Fazer reset jumps seguidos para o jogador ir pegando e invertando a gravidade.
+Subir com trampolins e integrar as plataformas no meio.

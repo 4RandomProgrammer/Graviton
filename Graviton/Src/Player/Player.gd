@@ -9,11 +9,32 @@ enum {
 	NOTONFLOOR
 }
 
+
+
 const MAXGRAVITY = 240
 const SPEED = 125
 const MAX_JUMP_HEIGHT = 36
 const MIN_JUMP_HEIGHT = 20
 const jump_duration = 0.20
+
+var skins = {
+	0: preload("res://Assets/Player/anim2.png"),
+	1: preload("res://Assets/Player/GravySkins/redGravy.png"),
+	2:preload("res://Assets/Player/GravySkins/blueGravy.png"),
+	3:preload("res://Assets/Player/GravySkins/purpleGravy.png"),
+	4:preload("res://Assets/Player/GravySkins/goldGravy.png"),
+	5:preload("res://Assets/Player/GravySkins/computerGRavy.png"),
+	6: preload("res://Assets/Player/GravySkins/cyberGravy.png"),
+	7:preload("res://Assets/Player/GravySkins/vaporGravy.png"),
+	8: preload("res://Assets/Player/GravySkins/bluemanGravy.png"),
+	9: preload("res://Assets/Player/GravySkins/blueTendencyGravy.png"),
+	10: preload("res://Assets/Player/GravySkins/redTendencyGravy.png"),
+	11: preload("res://Assets/Player/GravySkins/MadelineGravy.png"),
+	12: preload("res://Assets/Player/GravySkins/marioGravy.png"),
+	13: preload("res://Assets/Player/GravySkins/yoshiGravy.png"),
+	14: preload("res://Assets/Player/GravySkins/kirGravy.png")
+	
+}
 
 var onRotating  = false
 var snap = false
@@ -30,7 +51,7 @@ var gravity
 var positionUp = Vector2(0,-5)
 var positionDown = Vector2(0,3)
 var snapVec = Vector2(0,2)
-
+var playerSkins = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
 
 export (int)var MaxHealth = 3
 export (bool)var speedRunning = false
@@ -46,6 +67,8 @@ func _ready():
 	
 	if Main.speed:
 		$Camera2D/CanvasLayer/Timer.visible = true
+	
+	$Sprite.set_texture(skins[Main.playerSkin])
 	
 #BUG QUANDO ELE PULA EM UMA RAMPA, POR ALGUM MOTIVO ELE VAI PRO MÁX DA GRAVIDADE
 #E NÃO O MAX DO PULO, O PQ? EU NÃO SEI, SEI QUE ACONTECE.
@@ -151,9 +174,6 @@ func playanim():
 
 func _on_CollisionDetector_body_entered(body):
 	
-	if body is TileMap:
-		_check_tilemap(body)
-	
 	#não soube uma forma melhor que isso
 	if(body != self):
 		jumpCounter = 0
@@ -164,7 +184,6 @@ func _on_CollisionDetector_body_entered(body):
 func _check_tilemap(body : TileMap):
 	if body.has_method("_on_DeathZone_body_entered"):
 		body._on_DeathZone_body_entered(self)
-
 
 func add_gravity(xvalue,yvalue):
 	movement.x += xvalue
@@ -200,9 +219,13 @@ func _on_DeathSound_finished():
 	Main.set_vol(0)
 
 
-func _on_DeathArea_body_entered(_body):
+func _on_DeathArea_body_entered(body):
 	DeathSound()
-	emit_signal("died")
+	
+	if body is TileMap:
+		_check_tilemap(body)
+	else:
+		emit_signal("died")
 
 func _on_CollisionDetector_body_exited(_body):
 	snap = false

@@ -1,0 +1,332 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Src/Engine/Menu de Roupinhas.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Interactbles/coinspin-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Src/Menu/BtnFocus.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Menus/voltar-btn.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/anim2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/GravySkins/redGravyIcon.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/GravySkins/blueGravyIcon.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player/GravySkins/purpleGravyIcon.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/GravySkins/goldGravyIcon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Player/GravySkins/computerGRavyIcon.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player/GravySkins/cyberGravyIcon.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Player/GravySkins/bluemanGravyIcon.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Player/GravySkins/vaporGravyIcon.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Player/GravySkins/blueTendencyGravyIcon.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Player/GravySkins/redTendencyGravyIcon.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Player/GravySkins/MadelineGravyIcon.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Player/GravySkins/marioGravyIcon.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Player/GravySkins/kirGravyIcon.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Player/GravySkins/sirGravy2Icon.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Player/GravySkins/yoshiGravyIcon.png" type="Texture" id=20]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Menu de Roupinhas" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 400.0
+margin_bottom = 224.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulos" type="Label" parent="."]
+margin_left = 178.0
+margin_top = 2.0
+margin_right = 224.0
+margin_bottom = 16.0
+text = "Roupas"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coletados" type="Label" parent="."]
+margin_left = 193.0
+margin_top = 31.0
+margin_right = 239.0
+margin_bottom = 45.0
+text = "0/21"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Roupa1" parent="." instance=ExtResource( 3 )]
+margin_left = 77.0
+margin_top = 63.0
+margin_right = 87.0
+margin_bottom = 81.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa14")
+focus_neighbour_top = NodePath("../Roupa9")
+focus_neighbour_right = NodePath("../Roupa2")
+focus_neighbour_bottom = NodePath("../Roupa5")
+disabled = true
+texture_normal = ExtResource( 6 )
+
+[node name="Roupa2" parent="." instance=ExtResource( 3 )]
+margin_left = 157.0
+margin_top = 63.0
+margin_right = 166.0
+margin_bottom = 81.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa1")
+focus_neighbour_top = NodePath("../Roupa13")
+focus_neighbour_right = NodePath("../Roupa3")
+focus_neighbour_bottom = NodePath("../Roupa6")
+disabled = true
+texture_normal = ExtResource( 7 )
+
+[node name="Roupa3" parent="." instance=ExtResource( 3 )]
+margin_left = 231.0
+margin_top = 63.0
+margin_right = 240.0
+margin_bottom = 81.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa2")
+focus_neighbour_top = NodePath("../Roupa14")
+focus_neighbour_right = NodePath("../Roupa4")
+focus_neighbour_bottom = NodePath("../Roupa7")
+disabled = true
+texture_normal = ExtResource( 8 )
+
+[node name="Roupa4" parent="." instance=ExtResource( 3 )]
+margin_left = 305.0
+margin_top = 63.0
+margin_right = 314.0
+margin_bottom = 81.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa3")
+focus_neighbour_top = NodePath("../Roupa12")
+focus_neighbour_right = NodePath("../Roupa5")
+focus_neighbour_bottom = NodePath("../Roupa8")
+disabled = true
+texture_normal = ExtResource( 9 )
+
+[node name="Roupa5" parent="." instance=ExtResource( 3 )]
+margin_left = 76.0
+margin_top = 95.0
+margin_right = 85.0
+margin_bottom = 113.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa4")
+focus_neighbour_top = NodePath("../Roupa1")
+focus_neighbour_right = NodePath("../Roupa6")
+focus_neighbour_bottom = NodePath("../Roupa9")
+disabled = true
+texture_normal = ExtResource( 10 )
+
+[node name="Roupa6" parent="." instance=ExtResource( 3 )]
+margin_left = 157.0
+margin_top = 95.0
+margin_right = 166.0
+margin_bottom = 113.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa5")
+focus_neighbour_top = NodePath("../Roupa2")
+focus_neighbour_right = NodePath("../Roupa7")
+focus_neighbour_bottom = NodePath("../Roupa10")
+disabled = true
+texture_normal = ExtResource( 11 )
+
+[node name="Roupa7" parent="." instance=ExtResource( 3 )]
+margin_left = 232.0
+margin_top = 95.0
+margin_right = 241.0
+margin_bottom = 113.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa6")
+focus_neighbour_top = NodePath("../Roupa3")
+focus_neighbour_right = NodePath("../Roupa8")
+focus_neighbour_bottom = NodePath("../Roupa11")
+disabled = true
+texture_normal = ExtResource( 13 )
+
+[node name="Roupa8" parent="." instance=ExtResource( 3 )]
+margin_left = 305.0
+margin_top = 96.0
+margin_right = 314.0
+margin_bottom = 114.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa7")
+focus_neighbour_top = NodePath("../Roupa4")
+focus_neighbour_right = NodePath("../Roupa9")
+focus_neighbour_bottom = NodePath("../Roupa12")
+disabled = true
+texture_normal = ExtResource( 12 )
+
+[node name="Roupa9" parent="." instance=ExtResource( 3 )]
+margin_left = 76.0
+margin_top = 127.0
+margin_right = 85.0
+margin_bottom = 145.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa8")
+focus_neighbour_top = NodePath("../Roupa5")
+focus_neighbour_right = NodePath("../Roupa10")
+focus_neighbour_bottom = NodePath("../NormalSkin")
+disabled = true
+texture_normal = ExtResource( 14 )
+
+[node name="Roupa10" parent="." instance=ExtResource( 3 )]
+margin_left = 156.0
+margin_top = 127.0
+margin_right = 165.0
+margin_bottom = 145.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa9")
+focus_neighbour_top = NodePath("../Roupa6")
+focus_neighbour_right = NodePath("../Roupa11")
+focus_neighbour_bottom = NodePath("../Roupa13")
+disabled = true
+texture_normal = ExtResource( 15 )
+
+[node name="Roupa11" parent="." instance=ExtResource( 3 )]
+margin_left = 232.0
+margin_top = 127.0
+margin_right = 241.0
+margin_bottom = 145.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa10")
+focus_neighbour_top = NodePath("../Roupa7")
+focus_neighbour_right = NodePath("../Roupa12")
+focus_neighbour_bottom = NodePath("../Roupa14")
+disabled = true
+texture_normal = ExtResource( 16 )
+
+[node name="Roupa12" parent="." instance=ExtResource( 3 )]
+margin_left = 305.0
+margin_top = 128.0
+margin_right = 314.0
+margin_bottom = 146.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa11")
+focus_neighbour_top = NodePath("../Roupa8")
+focus_neighbour_right = NodePath("../Roupa13")
+focus_neighbour_bottom = NodePath("../Back")
+disabled = true
+texture_normal = ExtResource( 17 )
+
+[node name="Roupa13" parent="." instance=ExtResource( 3 )]
+margin_left = 156.0
+margin_top = 160.0
+margin_right = 165.0
+margin_bottom = 178.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa12")
+focus_neighbour_top = NodePath("../Roupa10")
+focus_neighbour_right = NodePath("../Roupa14")
+focus_neighbour_bottom = NodePath("../NormalSkin")
+disabled = true
+texture_normal = ExtResource( 20 )
+
+[node name="Roupa14" parent="." instance=ExtResource( 3 )]
+margin_left = 231.0
+margin_top = 160.0
+margin_right = 240.0
+margin_bottom = 178.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_left = NodePath("../Roupa13")
+focus_neighbour_top = NodePath("../Roupa11")
+focus_neighbour_right = NodePath("../Back")
+focus_neighbour_bottom = NodePath("../Back")
+disabled = true
+texture_normal = ExtResource( 18 )
+
+[node name="NormalSkin" parent="." instance=ExtResource( 3 )]
+margin_left = 59.0
+margin_top = 195.0
+margin_right = 68.0
+margin_bottom = 213.0
+rect_scale = Vector2( 1.5, 1.5 )
+focus_neighbour_top = NodePath("../Roupa13")
+focus_neighbour_right = NodePath("../Back")
+focus_neighbour_bottom = NodePath("../Roupa1")
+texture_normal = ExtResource( 19 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 178, 37 )
+frames = SubResource( 7 )
+frame = 5
+playing = true
+
+[node name="Back" parent="." instance=ExtResource( 3 )]
+margin_left = 352.0
+margin_top = 206.0
+margin_right = 400.0
+margin_bottom = 224.0
+focus_neighbour_left = NodePath("../NormalSkin")
+focus_neighbour_top = NodePath("../Roupa14")
+focus_neighbour_right = NodePath("../Roupa1")
+focus_neighbour_bottom = NodePath("../Roupa4")
+texture_normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 22.0
+margin_top = 15.0
+margin_right = 103.0
+margin_bottom = 29.0
+text = "Current Skin:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 60, 40 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+hframes = 4
+[connection signal="pressed" from="Roupa1" to="." method="_on_Roupa1_pressed"]
+[connection signal="pressed" from="Roupa2" to="." method="_on_Roupa2_pressed"]
+[connection signal="pressed" from="Roupa3" to="." method="_on_Roupa3_pressed"]
+[connection signal="pressed" from="Roupa4" to="." method="_on_Roupa4_pressed"]
+[connection signal="pressed" from="Roupa5" to="." method="_on_Roupa5_pressed"]
+[connection signal="pressed" from="Roupa6" to="." method="_on_Roupa6_pressed"]
+[connection signal="pressed" from="Roupa7" to="." method="_on_Roupa7_pressed"]
+[connection signal="pressed" from="Roupa8" to="." method="_on_Roupa8_pressed"]
+[connection signal="pressed" from="Roupa9" to="." method="_on_Roupa9_pressed"]
+[connection signal="pressed" from="Roupa10" to="." method="_on_Roupa10_pressed"]
+[connection signal="pressed" from="Roupa11" to="." method="_on_Roupa11_pressed"]
+[connection signal="pressed" from="Roupa12" to="." method="_on_Roupa12_pressed"]
+[connection signal="pressed" from="Roupa13" to="." method="_on_Roupa13_pressed"]
+[connection signal="pressed" from="Roupa14" to="." method="_on_Roupa14_pressed"]
+[connection signal="pressed" from="NormalSkin" to="." method="_on_NormalSkin_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

@@ -9,7 +9,9 @@ func showEnter():
 func hideEnter():
 	$enter.visible = false
 
-
+func isDisabled():
+	if self.disabled:
+		self.set_modulate(Color(0.5,0.5,0.5,1))
 
 func _on_BtnFocus_focus_entered():
 	showEnter()

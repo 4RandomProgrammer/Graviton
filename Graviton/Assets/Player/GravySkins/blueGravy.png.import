@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sirGravy2.png-eadcfb43d6485f366204e0d81582f439.stex"
+path="res://.import/blueGravy.png-b69ab44132122f34befd46065a1b184c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/sirGravy2.png"
-dest_files=[ "res://.import/sirGravy2.png-eadcfb43d6485f366204e0d81582f439.stex" ]
+source_file="res://Assets/Player/GravySkins/blueGravy.png"
+dest_files=[ "res://.import/blueGravy.png-b69ab44132122f34befd46065a1b184c.stex" ]
 
 [params]
 

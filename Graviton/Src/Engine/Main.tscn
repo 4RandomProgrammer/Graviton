@@ -7,6 +7,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
+checkPoint = Vector2( 5911, 232 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.55

@@ -8,7 +8,8 @@ func _ready():
 func _on_Play_pressed():
 	Main.setFase(self)
 	select()
-	Main.cleanup(0)
+	Main.loadGame()
+	Main.cleanup(0, false)
 
 
 func _on_Quit_pressed():

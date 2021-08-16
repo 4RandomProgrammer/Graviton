@@ -1,21 +1,22 @@
 extends Node2D
 
 export (int) var area = 0
-var colected = ["N", "N", "N"]
+var colected
+export var test = Vector2(4032,840)
 
 func _ready():
-	colected = Main.getColetaveis()
+	colected = [] + Main.getColetaveis()
 	print(colected)
 	colectedControl()
 	Main.set_vol(0)
 	var value = Main.get_CheckPoint()
-	
+	#var value = test
 	
 	if value != Vector2.ZERO:
 		$Player.position = value 
 
 func _on_Player_died():
-	Main.cleanup(area)
+	Main.cleanup(area, false)
 
 func colectedControl():
 
@@ -50,4 +51,7 @@ func _on_Coletavel2_coletado(number):
 	colected[number] = "S"
 
 func _on_LevelEnder_levelEnded():
+	Main.setColetaveis(colected[0], colected[1], colected[2])
+
+func update():
 	Main.setColetaveis(colected[0], colected[1], colected[2])

@@ -30,7 +30,7 @@ func _on_Menu_pressed():
 	pause()
 	Main.seg = 0
 	Main.m = 0
-	Main.cleanup(0)
+	Main.cleanup(0, false)
 	$Click.play()
 
 
