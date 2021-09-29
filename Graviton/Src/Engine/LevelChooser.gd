@@ -87,6 +87,7 @@ func _on_Tempos_pressed():
 
 func _on_Skins_pressed():
 	$Roupinhas.visible = true
+	$Roupinhas/Back.grab_focus()
 	$MenuSelectionSound.play()
 
 func _on_BtnFocus_pressed():

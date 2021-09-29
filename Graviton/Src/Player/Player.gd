@@ -50,7 +50,7 @@ var min_jump_velocity
 var gravity
 var positionUp = Vector2(0,-5)
 var positionDown = Vector2(0,3)
-var snapVec = Vector2(0,2)
+var snapVec = Vector2(0,8)
 var playerSkins = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
 
 export (int)var MaxHealth = 3

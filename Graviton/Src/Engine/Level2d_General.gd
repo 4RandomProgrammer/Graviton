@@ -1,8 +1,7 @@
 extends Node2D
 
 export (int) var area = 0
-var colected
-export var test = Vector2(4032,840)
+var colected#export var test = Vector2(48,-217)
 
 func _ready():
 	colected = [] + Main.getColetaveis()

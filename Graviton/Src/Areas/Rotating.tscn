@@ -586,10 +586,10 @@ radius = Vector2( 128, 128 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController" index="2" instance=ExtResource( 2 )]
-position = Vector2( -92.075, -88.9167 )
+position = Vector2( 85.6485, 95.1227 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController" index="3" instance=ExtResource( 2 )]
-position = Vector2( 92.075, 88.9167 )
+position = Vector2( -85.6485, -95.1227 )
 
 [node name="OrbitController2" parent="CircleplatForm" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1260, -28 )
@@ -597,13 +597,13 @@ radius = Vector2( 88, 88 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController2" index="2" instance=ExtResource( 2 )]
-position = Vector2( -63.3016, -61.1303 )
+position = Vector2( 58.8833, 65.3969 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController2" index="3" instance=ExtResource( 2 )]
-position = Vector2( 84.5912, -24.2557 )
+position = Vector2( -86.077, 18.296 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController2" index="4" instance=ExtResource( 2 )]
-position = Vector2( -21.2896, 85.3859 )
+position = Vector2( 27.1937, -83.6929 )
 
 [node name="OrbitController3" parent="CircleplatForm" index="2" instance=ExtResource( 3 )]
 position = Vector2( 1517, -22 )
@@ -611,10 +611,10 @@ radius = Vector2( 88, 88 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController3" index="2" instance=ExtResource( 2 )]
-position = Vector2( -63.3016, -61.1303 )
+position = Vector2( 58.8833, 65.3969 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController3" index="3" instance=ExtResource( 2 )]
-position = Vector2( 63.3016, 61.1303 )
+position = Vector2( -58.8833, -65.3969 )
 
 [node name="OrbitController4" parent="CircleplatForm" index="3" instance=ExtResource( 3 )]
 position = Vector2( 1781, -19 )
@@ -622,10 +622,10 @@ radius = Vector2( 88, 88 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController4" index="2" instance=ExtResource( 2 )]
-position = Vector2( -63.3016, -61.1303 )
+position = Vector2( 58.8833, 65.3969 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController4" index="3" instance=ExtResource( 2 )]
-position = Vector2( 63.3016, 61.1303 )
+position = Vector2( -58.8833, -65.3969 )
 
 [node name="OrbitController6" parent="CircleplatForm" index="4" instance=ExtResource( 3 )]
 position = Vector2( 2520, 135 )
@@ -633,10 +633,10 @@ radius = Vector2( 64, 128 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController6" index="2" instance=ExtResource( 2 )]
-position = Vector2( -46.0375, -88.9167 )
+position = Vector2( 42.8242, 95.1227 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController6" index="3" instance=ExtResource( 2 )]
-position = Vector2( 46.0375, 88.9167 )
+position = Vector2( -42.8242, -95.1227 )
 
 [node name="OrbitController7" parent="CircleplatForm" index="5" instance=ExtResource( 3 )]
 position = Vector2( 2928, 192 )
@@ -644,16 +644,16 @@ radius = Vector2( 64, 64 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController7" index="2" instance=ExtResource( 2 )]
-position = Vector2( -46.0375, -44.4584 )
+position = Vector2( 42.8242, 47.5614 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController7" index="3" instance=ExtResource( 2 )]
-position = Vector2( 44.4584, -46.0375 )
+position = Vector2( -47.5614, 42.8242 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController7" index="4" instance=ExtResource( 2 )]
-position = Vector2( 46.0375, 44.4584 )
+position = Vector2( -42.8242, -47.5614 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController7" index="5" instance=ExtResource( 2 )]
-position = Vector2( -44.4584, 46.0375 )
+position = Vector2( 47.5614, -42.8242 )
 
 [node name="OrbitController8" parent="CircleplatForm" index="6" instance=ExtResource( 3 )]
 position = Vector2( 3344, 191 )
@@ -662,16 +662,16 @@ radius = Vector2( 64, 64 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController8" index="2" instance=ExtResource( 2 )]
-position = Vector2( -46.0375, 44.4584 )
+position = Vector2( 42.8242, -47.5614 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController8" index="3" instance=ExtResource( 2 )]
-position = Vector2( -44.4584, -46.0375 )
+position = Vector2( 47.5614, 42.8242 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController8" index="4" instance=ExtResource( 2 )]
-position = Vector2( 46.0375, -44.4584 )
+position = Vector2( -42.8242, 47.5614 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController8" index="5" instance=ExtResource( 2 )]
-position = Vector2( 44.4584, 46.0375 )
+position = Vector2( -47.5614, -42.8242 )
 
 [node name="OrbitController9" parent="CircleplatForm" index="7" instance=ExtResource( 3 )]
 position = Vector2( 4872, 236 )
@@ -680,16 +680,16 @@ radius = Vector2( 64, 64 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController9" index="2" instance=ExtResource( 2 )]
-position = Vector2( -46.0375, 44.4584 )
+position = Vector2( 42.8242, -47.5614 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController9" index="3" instance=ExtResource( 2 )]
-position = Vector2( -44.4584, -46.0375 )
+position = Vector2( 47.5614, 42.8242 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController9" index="4" instance=ExtResource( 2 )]
-position = Vector2( 46.0375, -44.4584 )
+position = Vector2( -42.8242, 47.5614 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController9" index="5" instance=ExtResource( 2 )]
-position = Vector2( 44.4584, 46.0375 )
+position = Vector2( -47.5614, -42.8242 )
 
 [node name="OrbitController10" parent="CircleplatForm" index="8" instance=ExtResource( 3 )]
 position = Vector2( 3478, -236 )
@@ -698,19 +698,19 @@ radius = Vector2( 96, 96 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController10" index="2" instance=ExtResource( 2 )]
-position = Vector2( -69.0563, 66.6876 )
+position = Vector2( 64.2364, -71.3421 )
 
 [node name="Platform5" parent="CircleplatForm/OrbitController10" index="3" instance=ExtResource( 2 )]
-position = Vector2( -84.7632, -45.0688 )
+position = Vector2( 87.7005, 39.0465 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController10" index="4" instance=ExtResource( 2 )]
-position = Vector2( 16.6697, -94.5416 )
+position = Vector2( -10.0345, 95.4741 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController10" index="5" instance=ExtResource( 2 )]
-position = Vector2( 95.0657, -13.3611 )
+position = Vector2( -93.9021, 19.9597 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController10" index="6" instance=ExtResource( 2 )]
-position = Vector2( 42.0841, 86.284 )
+position = Vector2( -48.0002, -83.1383 )
 
 [node name="OrbitController12" parent="CircleplatForm" index="9" instance=ExtResource( 3 )]
 position = Vector2( 5243, 782 )
@@ -718,22 +718,22 @@ radius = Vector2( 80, 80 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController12" index="2" instance=ExtResource( 2 )]
-position = Vector2( -57.5469, -55.573 )
+position = Vector2( 53.5303, 59.4517 )
 
 [node name="Platform5" parent="CircleplatForm/OrbitController12" index="3" instance=ExtResource( 2 )]
-position = Vector2( 19.3541, -77.6236 )
+position = Vector2( -24.7215, 76.0845 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController12" index="4" instance=ExtResource( 2 )]
-position = Vector2( 76.901, -22.0506 )
+position = Vector2( -78.2518, 16.6328 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController12" index="5" instance=ExtResource( 2 )]
-position = Vector2( 57.5469, 55.573 )
+position = Vector2( -53.5303, -59.4517 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController12" index="6" instance=ExtResource( 2 )]
-position = Vector2( -19.3541, 77.6236 )
+position = Vector2( 24.7215, -76.0845 )
 
 [node name="Platform6" parent="CircleplatForm/OrbitController12" index="7" instance=ExtResource( 2 )]
-position = Vector2( -76.901, 22.0506 )
+position = Vector2( 78.2518, -16.6328 )
 
 [node name="OrbitController14" parent="CircleplatForm" index="10" instance=ExtResource( 3 )]
 position = Vector2( 5823, 362 )
@@ -741,13 +741,13 @@ radius = Vector2( 64, 64 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController14" index="2" instance=ExtResource( 2 )]
-position = Vector2( -46.0375, -44.4584 )
+position = Vector2( 42.8242, 47.5614 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController14" index="3" instance=ExtResource( 2 )]
-position = Vector2( 61.5208, -17.6405 )
+position = Vector2( -62.6015, 13.3062 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController14" index="4" instance=ExtResource( 2 )]
-position = Vector2( -15.4833, 62.0988 )
+position = Vector2( 19.7772, -60.8676 )
 
 [node name="OrbitController16" parent="CircleplatForm" index="11" instance=ExtResource( 3 )]
 position = Vector2( 5568, 528 )
@@ -756,16 +756,16 @@ radius = Vector2( 72, 72 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController16" index="2" instance=ExtResource( 2 )]
-position = Vector2( -51.7922, 50.0157 )
+position = Vector2( 48.1773, -53.5065 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController16" index="3" instance=ExtResource( 2 )]
-position = Vector2( -50.0157, -51.7922 )
+position = Vector2( 53.5065, 48.1773 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController16" index="4" instance=ExtResource( 2 )]
-position = Vector2( 51.7922, -50.0157 )
+position = Vector2( -48.1773, 53.5065 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController16" index="5" instance=ExtResource( 2 )]
-position = Vector2( 50.0157, 51.7922 )
+position = Vector2( -53.5065, -48.1773 )
 
 [node name="OrbitController13" parent="CircleplatForm" index="12" instance=ExtResource( 3 )]
 position = Vector2( 4939, 782 )
@@ -774,16 +774,16 @@ radius = Vector2( 80, 80 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController13" index="2" instance=ExtResource( 2 )]
-position = Vector2( -57.5469, 55.573 )
+position = Vector2( 53.5303, -59.4517 )
 
 [node name="Platform5" parent="CircleplatForm/OrbitController13" index="3" instance=ExtResource( 2 )]
-position = Vector2( -55.573, -57.5469 )
+position = Vector2( 59.4517, 53.5303 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController13" index="4" instance=ExtResource( 2 )]
-position = Vector2( 57.5469, -55.573 )
+position = Vector2( -53.5303, 59.4517 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController13" index="5" instance=ExtResource( 2 )]
-position = Vector2( 55.573, 57.5469 )
+position = Vector2( -59.4517, -53.5303 )
 
 [node name="OrbitController15" parent="CircleplatForm" index="13" instance=ExtResource( 3 )]
 position = Vector2( 4652, 782 )
@@ -792,10 +792,10 @@ radius = Vector2( 80, 80 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController15" index="2" instance=ExtResource( 2 )]
-position = Vector2( -57.5469, 55.573 )
+position = Vector2( 53.5303, -59.4517 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController15" index="3" instance=ExtResource( 2 )]
-position = Vector2( 57.5469, -55.573 )
+position = Vector2( -53.5303, 59.4517 )
 
 [node name="OrbitController17" parent="CircleplatForm" index="14" instance=ExtResource( 3 )]
 position = Vector2( 3856, 785 )
@@ -804,10 +804,10 @@ radius = Vector2( 72, 112 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController17" index="2" instance=ExtResource( 2 )]
-position = Vector2( -51.7922, 77.8021 )
+position = Vector2( 48.1773, -83.2324 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController17" index="3" instance=ExtResource( 2 )]
-position = Vector2( 51.7922, -77.8021 )
+position = Vector2( -48.1773, 83.2324 )
 
 [node name="OrbitController18" parent="CircleplatForm" index="15" instance=ExtResource( 3 )]
 position = Vector2( 3369, 785 )
@@ -816,10 +816,10 @@ radius = Vector2( 72, 112 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController18" index="2" instance=ExtResource( 2 )]
-position = Vector2( -51.7922, 77.8021 )
+position = Vector2( 48.1773, -83.2324 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController18" index="3" instance=ExtResource( 2 )]
-position = Vector2( 51.7922, -77.8021 )
+position = Vector2( -48.1773, 83.2324 )
 
 [node name="OrbitController19" parent="CircleplatForm" index="16" instance=ExtResource( 3 )]
 position = Vector2( 3063, 785 )
@@ -828,13 +828,13 @@ radius = Vector2( 72, 112 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController19" index="2" instance=ExtResource( 2 )]
-position = Vector2( -51.7922, 77.8021 )
+position = Vector2( 48.1773, -83.2324 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController19" index="3" instance=ExtResource( 2 )]
-position = Vector2( -17.4187, -108.673 )
+position = Vector2( 22.2494, 106.518 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController19" index="4" instance=ExtResource( 2 )]
-position = Vector2( 69.2109, 30.8708 )
+position = Vector2( -70.4267, -23.2859 )
 
 [node name="OrbitController20" parent="CircleplatForm" index="17" instance=ExtResource( 3 )]
 position = Vector2( 2776, 785 )
@@ -842,16 +842,16 @@ radius = Vector2( 72, 112 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController20" index="2" instance=ExtResource( 2 )]
-position = Vector2( -51.7922, -77.8021 )
+position = Vector2( 48.1773, 83.2324 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController20" index="3" instance=ExtResource( 2 )]
-position = Vector2( 50.0157, -80.5657 )
+position = Vector2( -53.5065, 74.9424 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController20" index="4" instance=ExtResource( 2 )]
-position = Vector2( 51.7922, 77.8021 )
+position = Vector2( -48.1773, -83.2324 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController20" index="5" instance=ExtResource( 2 )]
-position = Vector2( -50.0157, 80.5657 )
+position = Vector2( 53.5065, -74.9424 )
 
 [node name="OrbitController21" parent="CircleplatForm" index="18" instance=ExtResource( 3 )]
 position = Vector2( 2440, 785 )
@@ -859,16 +859,16 @@ radius = Vector2( 72, 112 )
 rotationDuration = 6
 
 [node name="Platform" parent="CircleplatForm/OrbitController21" index="2" instance=ExtResource( 2 )]
-position = Vector2( -51.7922, -77.8021 )
+position = Vector2( 48.1773, 83.2324 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController21" index="3" instance=ExtResource( 2 )]
-position = Vector2( 50.0157, -80.5657 )
+position = Vector2( -53.5065, 74.9424 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController21" index="4" instance=ExtResource( 2 )]
-position = Vector2( 51.7922, 77.8021 )
+position = Vector2( -48.1773, -83.2324 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController21" index="5" instance=ExtResource( 2 )]
-position = Vector2( -50.0157, 80.5657 )
+position = Vector2( 53.5065, -74.9424 )
 
 [node name="OrbitController11" parent="CircleplatForm" index="19" instance=ExtResource( 3 )]
 position = Vector2( 5209, 319 )
@@ -877,19 +877,19 @@ radius = Vector2( 96, 96 )
 rotationDuration = 9
 
 [node name="Platform" parent="CircleplatForm/OrbitController11" index="2" instance=ExtResource( 2 )]
-position = Vector2( -82.5745, -48.9638 )
+position = Vector2( 3.3505, 95.9415 )
 
 [node name="Platform5" parent="CircleplatForm/OrbitController11" index="3" instance=ExtResource( 2 )]
-position = Vector2( 21.0504, -93.6637 )
+position = Vector2( -90.2104, 32.8341 )
 
 [node name="Platform2" parent="CircleplatForm/OrbitController11" index="4" instance=ExtResource( 2 )]
-position = Vector2( 95.5844, -8.92351 )
+position = Vector2( -59.1036, -75.6489 )
 
 [node name="Platform3" parent="CircleplatForm/OrbitController11" index="5" instance=ExtResource( 2 )]
-position = Vector2( 38.024, 88.1486 )
+position = Vector2( 53.6824, -79.5877 )
 
 [node name="Platform4" parent="CircleplatForm/OrbitController11" index="6" instance=ExtResource( 2 )]
-position = Vector2( -72.0843, 63.4024 )
+position = Vector2( 92.2812, 26.461 )
 
 [node name="OrbitController5" parent="CircleplatForm" index="20" instance=ExtResource( 3 )]
 position = Vector2( 1951, -18 )
